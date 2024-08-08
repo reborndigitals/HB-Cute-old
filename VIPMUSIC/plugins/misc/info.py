@@ -20,11 +20,11 @@ SPAM_THRESHOLD = 2
 SPAM_WINDOW_SECONDS = 5
 
 random_photo = [
-    "https://telegra.ph/file/2db9e6beae255e08ff204.jpg",
-    "https://telegra.ph/file/2db9e6beae255e08ff204.jpg",
-    "https://telegra.ph/file/2db9e6beae255e08ff204.jpg",
-    "https://telegra.ph/file/2db9e6beae255e08ff204.jpg",
-    "https://telegra.ph/file/2db9e6beae255e08ff204.jpg",
+    "https://graph.org/file/ffdb1be822436121cf5fd.png",
+    "https://graph.org/file/ffdb1be822436121cf5fd.png",
+    "https://graph.org/file/ffdb1be822436121cf5fd.png",
+    "https://graph.org/file/ffdb1be822436121cf5fd.png",
+    "https://graph.org/file/ffdb1be822436121cf5fd.png",
 ]
 
 # --------------------------------------------------------------------------------- #
