@@ -12,6 +12,13 @@ API_HASH = getenv("API_HASH", "e6d1f09120e17a4372fe022dde88511b")
 BOT_TOKEN = getenv("BOT_TOKEN")
 
 # Get your mongo url from cloud.mongodb.com
+OWNER_USERNAME = getenv("OWNER_USERNAME","rajeshrakis")
+BOT_USERNAME = getenv("BOT_USERNAME", "thedakkidaikathaval_bot")
+BOT_NAME = getenv("BOT_NAME", "𝞖𝘌𝘈𝘙𝘛𝞑𝘌𝘈𝘛𝂬♡𝂬𝘿𝘙𝘜𝘎𝘡")
+ASSUSERNAME = getenv("ASSUSERNAME", "ice_babygirl")
+EVALOP = list(map(int, getenv("EVALOP", "5059737154").split()))
+GPT_API = getenv("GPT_API", "sk-proj-h6pk40oVRIxpXwrf3i50T3BlbkFJGVET8wX1yJtdi0zCWjDQ")
+PLAYHT_API = getenv("PLAYHT_API", "22e323f342024c0fb4ee430eeb9d0011")
 MONGO_DB_URI = getenv("MONGO_DB_URI",)
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
