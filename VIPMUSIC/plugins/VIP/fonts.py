@@ -1,7 +1,7 @@
 from pyrogram import  filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from VIPMUSIC.utils.jarvis_font import Fonts
+from VIPMUSIC.utils.vip_font import Fonts
 from VIPMUSIC import app
 
 @app.on_message(filters.command(["font", "fonts"]))
