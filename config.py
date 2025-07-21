@@ -7,37 +7,37 @@ from pyrogram import filters
 load_dotenv()
 
 # Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID","8045459"))
-API_HASH = getenv("API_HASH", "e6d1f09120e17a4372fe022dde88511b")
-BOT_TOKEN = getenv("BOT_TOKEN")
-
-# Get your mongo url from cloud.mongodb.com
+API_ID = int(getenv("API_ID", "10284859"))
+API_HASH = getenv("API_HASH", "b0ad58eb8b845ba0003e0d9ce5fc2196")
+# Get your token from @BotFather on Telegram.
+BOT_TOKEN = getenv("BOT_TOKEN", "2096983652:AAHz41orhz9RrWscwg_WwSCp0_OhP-zLmDY")
 OWNER_USERNAME = getenv("OWNER_USERNAME","rajeshrakis")
 BOT_USERNAME = getenv("BOT_USERNAME", "thedakkidaikathaval_bot")
 BOT_NAME = getenv("BOT_NAME", "𝞖𝘌𝘈𝘙𝘛𝞑𝘌𝘈𝘛𝂬♡𝂬𝘿𝘙𝘜𝘎𝘡")
 ASSUSERNAME = getenv("ASSUSERNAME", "HeartBeat_eyes")
-EVALOP = list(map(int, getenv("EVALOP", "5059737154").split()))
+EVALOP = list(map(int, getenv("EVALOP", "1281282633").split()))
 GPT_API = getenv("GPT_API", "sk-proj-h6pk40oVRIxpXwrf3i50T3BlbkFJGVET8wX1yJtdi0zCWjDQ")
 PLAYHT_API = getenv("PLAYHT_API", "22e323f342024c0fb4ee430eeb9d0011")
-MONGO_DB_URI = getenv("MONGO_DB_URI","mongodb+srv://admin:pass@cluster0.bqss1.mongodb.net/todo?retryWrites=true&w=majority")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://heartbeat:Beat7Heart@heartbeat.1h1nbxv.mongodb.net/?retryWrites=true&w=majority")
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 16000))
 
 # Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID", "-1001735663878"))
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001735663878"))
 
 # Get this value from  on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID", 1281282633))
+OWNER_ID = int(getenv("OWNER_ID","1281282633"))
 
 ## Fill these variables if you're deploying on heroku.
-HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
+# Your heroku app name
+HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", "apple-cute")
 # Get it from http://dashboard.heroku.com/account
 HEROKU_API_KEY = getenv("HEROKU_API_KEY", "HRKU-fc1b7aea-b37a-4015-9877-8c3967ee97bc")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/rajeshrakis/hb-cute",
+    "https://github.com/rajeshrakis/Apple-Cute",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv(
@@ -45,7 +45,7 @@ GIT_TOKEN = getenv(
 )  # Fill this variable if your upstream repository is private
 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/HeartBeat_Offi")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/HeartBeat_Muzic")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/HeartBeat_Fam")
 
 # Maximum Limit Allowed for users to save playlists on bot's server
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "3000"))
@@ -88,7 +88,7 @@ CLEANMODE_DELETE_MINS = int(
 )  # Remember to give value in Seconds
 
 # Get your pyrogram v2 session from @VIP_STRING_ROBOT on Telegram
-STRING1 = getenv("STRING_SESSION2", None)
+STRING1 = getenv("STRING_SESSION", "BQDMBnkANkdd2OSiqGwlNUIllqlR1uOT5-eq358s9Li-x0jn6gykpHz0bip0fnbPdfE1tQF95bPETepPC8dpVmVg_KL0NT5UsZH4djWJNmyeyUHeiAPulqIBiljZHIMHB8JV2r1GZr_ojoJZFgZhTrRgUCQwDlYNlskQKDnwtAQm2rbdmr6ZqVx0Tph5Iord2wX25eqXEytuAOKVehKSv746DMGAGEKs7g03f8kobBWsRl-a34hcOhi_t2aj0VU4VNFEokqfvc73l412x2r0zRksYyiLdbxwEtb35rohPEIkV61i94JrXjxzFObvyr5MyAhdUaM-Ax1HRCp0eVhNOMvMxTvKBgAAAAB8_W5kAQ")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -118,7 +118,7 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://graph.org/file/f21bcb4b8b9c421409b64.png"
+    "START_IMG_URL", "https://telegra.ph/file/e5aaa494015bccbe1ec85.jpg"
 )
 PING_IMG_URL = getenv(
     "PING_IMG_URL", "https://graph.org/file/ffdb1be822436121cf5fd.png"
