@@ -44,8 +44,12 @@ GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-API_URL = getenv("API_URL", '165.22.208.11:5000') #youtube song url
-API_KEY = getenv("API_KEY", 'FF7gDUpfpXkk4YVrlXDOAPpT')
+# another key
+#API_URL = getenv("API_URL", '165.22.208.11:5000') #youtube song url
+#API_KEY = getenv("API_KEY", 'FF7gDUpfpXkk4YVrlXDOAPpT')
+
+API_URL = getenv("API_URL", 'http://154.26.159.2:1470/youtube') #youtube song url
+API_KEY = getenv("API_KEY", '1a873582a7c83342f961cx0a177b2b26') # youtube song api key, generate free key or buy paid plan from panel.thequickearn.xyz
 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/HeartBeat_Offi")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/HeartBeat_Fam")
