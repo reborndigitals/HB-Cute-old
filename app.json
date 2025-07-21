@@ -24,7 +24,7 @@
       },
       "BOT_TOKEN": {
         "description": "𝐆𝐄𝐓 𝐁𝐎𝐓 𝐓𝐎𝐊𝐄𝐍 𝐅𝐑𝐎𝐌 𝐁𝐎𝐓 𝐅𝐀𝐓𝐇𝐄𝐑",
-        "value": "",
+        "value": "7921879783:AAHGhdH_vY-KIGUpYO40qmy5FGUsuxAE3Ow",
         "required": true
       },
       "MONGO_DB_URI": {
@@ -34,12 +34,12 @@
       },
       "OWNER_ID": {
         "description": "𝐅𝐈𝐋𝐋 𝐇𝐄𝐑𝐄 𝐎𝐖𝐍𝐄𝐑 𝐈𝐃, 𝐔 𝐂𝐀𝐍 𝐔𝐒𝐄 𝐌𝐎𝐑𝐄 𝐏𝐄𝐑𝐒𝐎𝐍 𝐈𝐃 𝐁𝐘 𝐆𝐈𝐕𝐄𝐈𝐍𝐆 𝐒𝐏𝐀𝐂𝐄 𝐀𝐅𝐓𝐄𝐑 𝐎𝐍𝐄 𝐈𝐃.",
-        "value": "1281282633",
+        "value": "7888151947",
         "required": true
       },
       "STRING_SESSION": {
         "description": "𝐅𝐈𝐋𝐋 𝐇𝐄𝐑𝐄 𝐀  𝐏𝐘𝐑𝐎𝐆𝐑𝐀𝐌 V2 𝐒𝐓𝐑𝐈𝐍𝐆 𝐒𝐄𝐒𝐒𝐈𝐎𝐍, 𝐈𝐅 𝐄𝐑𝐑𝐎𝐑 𝐓𝐇𝐄𝐍 𝐒𝐄𝐍𝐃 𝐄𝐑𝐑𝐎𝐑 𝐒𝐒 𝐓𝐎 𝐑𝐄𝐏𝐎 𝐎𝐖𝐍𝐄𝐑.( 𝐆𝐄𝐓 𝐅𝐑𝐎𝐌 = t.me/VIP_STRING_ROBOT ) . ",
-        "value": "",
+        "value": "BQFexMIAVarMZiAmy_yEvL8MSnJ8ZVYZp0f60LHNWt6tCW16YxoPZJ73sMg8iDDqdjIAnL5fuooDJlVaag40bNjl97drp4cnftWR2sP2pbp3Nr2HZnvuXAndvDKUgSxibAT-dBIFk3SpNaydzznikXETc-_sQbCSfOMWNWc2VbnwLf-jHZ_tHWXXZutPkbKbu8A7g24JKobQw-9lHi0w5K7b4Y4Mg9P4ZdCTEJfHUR0mvzV1hNcSgVnlebYsiUIO7P1CkQwMO1qMgaWjwTCrreFbR4FiO38DAjns3LequNmcDcIM9JOVJUxZkMU3ESQ1cKUvQVQOukppKtxutpABqU_cLtYUewAAAAHoATkvAA",
         "required": true
       },
       "HEROKU_API_KEY": {
