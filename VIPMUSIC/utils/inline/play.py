@@ -476,11 +476,10 @@ def stream_markup(_, videoid, chat_id, played, dur):
         InlineKeyboardButton(
             text="💕 𝐀𖽴ᵥ𖽖𖽝𖽞 🦋",
             callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
-        ),
-    ],
-]
-
-return buttons
+            ),
+        ],
+    ]
+    return buttons
 
 
 def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
