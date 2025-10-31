@@ -7,49 +7,42 @@ from pyrogram import filters
 load_dotenv()
 
 # Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID", "10284859"))
-API_HASH = getenv("API_HASH", "b0ad58eb8b845ba0003e0d9ce5fc2196")
-# Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN", "2096983652:AAHz41orhz9RrWscwg_WwSCp0_OhP-zLmDY")
+API_ID = int(getenv("API_ID","8045459"))
+API_HASH = getenv("API_HASH", "e6d1f09120e17a4372fe022dde88511b")
+BOT_TOKEN = getenv("BOT_TOKEN", "8244250546:AAGv_n9GxRhZuGvzgVhEr7G_XfL7tqL8IIE")
+
+# Get your mongo url from cloud.mongodb.com
 OWNER_USERNAME = getenv("OWNER_USERNAME","rajeshrakis")
 BOT_USERNAME = getenv("BOT_USERNAME", "thedakkidaikathaval_bot")
 BOT_NAME = getenv("BOT_NAME", "𝞖𝘌𝘈𝘙𝘛𝞑𝘌𝘈𝘛𝂬♡𝂬𝘿𝘙𝘜𝘎𝘡")
-ASSUSERNAME = getenv("ASSUSERNAME", "HeartBeat_eyes")
+ASSUSERNAME = getenv("ASSUSERNAME", "Apple_Ponnu")
 EVALOP = list(map(int, getenv("EVALOP", "1281282633").split()))
+MONGO_DB_URI = getenv("MONGO_DB_URI","mongodb+srv://zewdatabase:ijoXgdmQ0NCyg9DO@zewgame.urb3i.mongodb.net/ontap?retryWrites=true&w=majority")
 GPT_API = getenv("GPT_API", "sk-proj-h6pk40oVRIxpXwrf3i50T3BlbkFJGVET8wX1yJtdi0zCWjDQ")
 PLAYHT_API = getenv("PLAYHT_API", "22e323f342024c0fb4ee430eeb9d0011")
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://heartbeat:Beat7Heart@heartbeat.1h1nbxv.mongodb.net/?retryWrites=true&w=majority")
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 16000))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
 
 # Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID", "-1001735663878"))
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001735663878"))
 
 # Get this value from  on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID","1281282633"))
+OWNER_ID = int(getenv("OWNER_ID", 1281282633))
 
 ## Fill these variables if you're deploying on heroku.
-# Your heroku app name
-HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", "apple-cute")
+HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 # Get it from http://dashboard.heroku.com/account
 HEROKU_API_KEY = getenv("HEROKU_API_KEY", "HRKU-fc1b7aea-b37a-4015-9877-8c3967ee97bc")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/reborndigitals/HB-Cute-old",
+    "https://github.com/reborndigitals/HB-Cute",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
-
-# another key
-#API_URL = getenv("API_URL", '165.22.208.11:5000') #youtube song url
-#API_KEY = getenv("API_KEY", 'FF7gDUpfpXkk4YVrlXDOAPpT')
-
-API_URL = getenv("API_URL", 'http://154.26.159.2:1470/youtube') #youtube song url
-API_KEY = getenv("API_KEY", '1a873582a7c83342f961cx0a177b2b26') # youtube song api key, generate free key or buy paid plan from panel.thequickearn.xyz
 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/HeartBeat_Offi")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/HeartBeat_Fam")
@@ -95,7 +88,7 @@ CLEANMODE_DELETE_MINS = int(
 )  # Remember to give value in Seconds
 
 # Get your pyrogram v2 session from @VIP_STRING_ROBOT on Telegram
-STRING1 = getenv("STRING_SESSION", "BQDMBnkANkdd2OSiqGwlNUIllqlR1uOT5-eq358s9Li-x0jn6gykpHz0bip0fnbPdfE1tQF95bPETepPC8dpVmVg_KL0NT5UsZH4djWJNmyeyUHeiAPulqIBiljZHIMHB8JV2r1GZr_ojoJZFgZhTrRgUCQwDlYNlskQKDnwtAQm2rbdmr6ZqVx0Tph5Iord2wX25eqXEytuAOKVehKSv746DMGAGEKs7g03f8kobBWsRl-a34hcOhi_t2aj0VU4VNFEokqfvc73l412x2r0zRksYyiLdbxwEtb35rohPEIkV61i94JrXjxzFObvyr5MyAhdUaM-Ax1HRCp0eVhNOMvMxTvKBgAAAAB8_W5kAQ")
+STRING1 = getenv("STRING_SESSION2", "BQGhmW8AgmxBAF7Tm87lK9crvVAQg_BT8u_IxCy_VII41tb4FTZPDVWmHAvADe4qb5UuJJoF5uezbXjjFi6EkuUd8fzYaq6D4n_Vn-DB-2OjxnE-R0ObpdRA8HTwtJwsox1GndVaKvj-UG6FV9nsRFjkJl98J59kEkV2Q1Lmfnpys9498Gf4Ft0ojRlk17Jzd1s87MZ6UOUZQ6AUoZm22PigpEUw1nNwJuk-zaMjxjwQDwbcCjpl8gZWXiF2XwE_fudil28Nze431yFc91r-0d-lAVr3wGFzLFHgk_MYyWyiv-wSrbJgtEpIdSOJ6cYRxqDLqBeqk469ivKFlDllOSBdy2M7BQAAAAGTum08AA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -125,7 +118,7 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://telegra.ph/file/e5aaa494015bccbe1ec85.jpg"
+    "START_IMG_URL", "https://graph.org/file/f21bcb4b8b9c421409b64.png"
 )
 PING_IMG_URL = getenv(
     "PING_IMG_URL", "https://graph.org/file/ffdb1be822436121cf5fd.png"
