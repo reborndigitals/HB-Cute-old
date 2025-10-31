@@ -71,7 +71,7 @@ async def ctest(_, message):
          img1 = Image.open(f"{p1}")
          img2 = Image.open(f"{p2}")
 
-         img = Image.open("VIPMUSIC/assets/annie/ANNIECP.png")
+         img = Image.open("ANNIEMUSIC/assets/annie/ANNIECP.png")
 
          img1 = img1.resize((486,486))
          img2 = img2.resize((486,486))
@@ -96,11 +96,11 @@ async def ctest(_, message):
          img.save(f'test_{cid}.png')
     
          TXT = f"""
-**𝐓ᴏᴅᴀʏ's 𝐒ᴇʟᴇᴄᴛᴇᴅ 𝐂ᴏᴜᴘʟᴇs 🎉 :
+**<blockquote>𝐓ᴏᴅᴀʏ's 𝐒ᴇʟᴇᴄᴛᴇᴅ 𝐂ᴏᴜᴘʟᴇs 🎉</blockquote>
 ✧══════•❁♡︎❁•══════✧
-{N1} + {N2} = 💗
+<blockquote>{N1} + {N2} = 💗</blockquote>
 ✧══════•❁♡︎❁•══════✧
-𝐍ᴇxᴛ 𝐂ᴏᴜᴘʟᴇs 𝐖ɪʟʟ 𝐁ᴇ 𝐒ᴇʟᴇᴄᴛᴇᴅ 𝐎ɴ {tomorrow} !!**
+<blockquote>𝐍ᴇxᴛ 𝐂ᴏᴜᴘʟᴇs 𝐖ɪʟʟ 𝐁ᴇ 𝐒ᴇʟᴇᴄᴛᴇᴅ 𝐎ɴ {tomorrow} !!</blockquote>**
 """
     
          await message.reply_photo(f"test_{cid}.png", caption=TXT)
@@ -109,23 +109,23 @@ async def ctest(_, message):
          for x in a:
            img = "https://graph.org/" + x
            couple = {"c1_id": c1_id, "c2_id": c2_id}
-          # await save_couple(cid, today, couple, img)
+            await save_couple(cid, today, couple, img)
     
          
-      # elif is_selected:
-      #   msg = await message.reply_text("𝐆ᴇᴛᴛɪɴɢ 𝐓ᴏᴅᴀʏs 𝐂ᴏᴜᴘʟᴇs 𝐈ᴍᴀɢᴇ...")
-      #   b = await _get_image(cid)
-       #  c1_id = int(is_selected["c1_id"])
-       #  c2_id = int(is_selected["c2_id"])
-       #  c1_name = (await app.get_users(c1_id)).first_name
-        # c2_name = (await app.get_users(c2_id)).first_name
+         elif is_selected:
+          msg = await message.reply_text("𝐆ᴇᴛᴛɪɴɢ 𝐓ᴏᴅᴀʏs 𝐂ᴏᴜᴘʟᴇs 𝐈ᴍᴀɢᴇ...")
+          b = await _get_image(cid)
+          c1_id = int(is_selected["c1_id"])
+          c2_id = int(is_selected["c2_id"])
+          c1_name = (await app.get_users(c1_id)).first_name
+          c2_name = (await app.get_users(c2_id)).first_name
          
-      #   TXT = f"""
-#**𝐓ᴏᴅᴀʏ's 𝐒ᴇʟᴇᴄᴛᴇᴅ 𝐂ᴏᴜᴘʟᴇs 🎉 :
-#➖➖➖➖➖➖➖➖➖➖➖➖
-#[{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❣️
-#➖➖➖➖➖➖➖➖➖➖➖➖
-#𝐍ᴇxᴛ 𝐂ᴏᴜᴘʟᴇs 𝐖ɪʟʟ 𝐁ᴇ 𝐒ᴇʟᴇᴄᴛᴇᴅ 𝐎ɴ {tomorrow} !!**
+          TXT = f"""
+ <blockquote>**𝐓ᴏᴅᴀʏ's 𝐒ᴇʟᴇᴄᴛᴇᴅ 𝐂ᴏᴜᴘʟᴇs 🎉 </blockquote>
+ ✧══════•❁♡︎❁•══════✧
+ <blockquote>[{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❣️</blockquote>
+ ✧══════•❁♡︎❁•══════✧
+ <blockquote>𝐍ᴇxᴛ 𝐂ᴏᴜᴘʟᴇs 𝐖ɪʟʟ 𝐁ᴇ 𝐒ᴇʟᴇᴄᴛᴇᴅ 𝐎ɴ {tomorrow} !!</blockquote>**
 #"""
  #        await message.reply_photo(b, caption=TXT)
         # await msg.delete()
