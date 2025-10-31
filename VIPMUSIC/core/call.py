@@ -438,7 +438,7 @@ class Call(PyTgCalls):
                         text=_["call_6"],
                     )
                 img = await get_thumb(videoid)
-                button = stream_markup(_, videoid, chat_id)
+                button = stream_markup(_, videoid, chat_id, played, dur)
                 await mystic.delete()
                 run = await app.send_photo(
                     chat_id=original_chat_id,
@@ -526,13 +526,13 @@ class Call(PyTgCalls):
                     db[chat_id][0]["markup"] = "tg"
                 else:
                     img = await get_thumb(videoid)
-                    button = stream_markup(_, videoid, chat_id)
+                    button = stream_markup(_, videoid, chat_id, played, dur)
                     run = await app.send_photo(
                         chat_id=original_chat_id,
                         photo=img,
                         caption=_["stream_1"].format(
                             f"https://t.me/{app.username}?start=info_{videoid}",
-                            title[:23],
+                            title[:15],
                             check[0]["dur"],
                             user,
                         ),
