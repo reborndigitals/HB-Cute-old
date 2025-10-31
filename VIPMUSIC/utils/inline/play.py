@@ -787,6 +787,7 @@ def panel_markup_5(_, videoid, chat_id):
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
+        [
             InlineKeyboardButton(
                 text="💕 𝐇𖽙𖽧𖽞 🦋",
                 callback_data=f"MainMarkup {videoid}|{chat_id}",
