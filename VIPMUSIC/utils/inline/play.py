@@ -946,22 +946,18 @@ def panel_markup_2(_, videoid, chat_id):
     return buttons
 
 def panel_markup_5(_, videoid, chat_id):
-    buttons = [
-
+    buttons = [
         [
             InlineKeyboardButton(
                 text=_["S_B_5"],
                 url=f"https://t.me/{app.username}?startgroup=true",
             ),
         ],
-
         [
             InlineKeyboardButton(
-                text= "💕 𝐏𖾘𖽖ʏ𖾘𖽹𖾗𖾓 🦋",
-                callback_data=f"vip_playlist {videoid}"
+                text="💕 𝐏𖾘𖽖ʏ𖾘𖽹𖾗𖾓 🦋",
+                callback_data=f"vip_playlist {videoid}",
             ),
-        
-        
             InlineKeyboardButton(
                 text="💕 𝐂𖽙𖽡𖾓𖾖𖽙𖾘𖾗 🦋",
                 callback_data=f"Pages Back|3|{videoid}|{chat_id}",
@@ -969,24 +965,26 @@ def panel_markup_5(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text= "💕 𝐕𖽹𖽴𖽞𖽙 🦋",
-                callback_data=f"downloadvideo {videoid}"),
+                text="💕 𝐕𖽹𖽴𖽞𖽙 🦋",
+                callback_data=f"downloadvideo {videoid}",
+            ),
             InlineKeyboardButton(
-                text= "💕 𝐀𖽪𖽴𖽹𖽙 🦋",
-                callback_data=f"downloadaudio {videoid}")
-          ],
-        [
-            InlineKeyboardButton(
-                text="💕 𝐇𖽙𖽧𖽞 🦋",
-                callback_data=f"MainMarkup {videoid}|{chat_id}",
-            ),
-            InlineKeyboardButton(
-                text="💕 𝐍𖽞𝅃𖾓 🦋",
-                callback_data=f"Pages Forw|1|{videoid}|{chat_id}",
-            ),
-        ],
-    ]
-    return buttons
+                text="💕 𝐀𖽪𖽴𖽹𖽙 🦋",
+                callback_data=f"downloadaudio {videoid}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="💕 𝐇𖽙𖽧𖽞 🦋",
+                callback_data=f"MainMarkup {videoid}|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="💕 𝐍𖽞𝅃𖾓 🦋",
+                callback_data=f"Pages Forw|1|{videoid}|{chat_id}",
+            ),
+        ],
+    ]
+    return buttons
 
 
 def panel_markup_3(_, videoid, chat_id):
