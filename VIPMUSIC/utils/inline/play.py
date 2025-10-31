@@ -9,12 +9,12 @@ from VIPMUSIC import app
 def track_markup(_, user_id, channel, fplay):
     buttons = [
 
-        [
-            InlineKeyboardButton(
-                text=_["S_B_5"],
-                url=f"https://t.me/{app.username}?startgroup=true",
-            ),
-        ],
+        #[
+         #   InlineKeyboardButton(
+           #     text=_["S_B_5"],
+           #     url=f"https://t.me/{app.username}?startgroup=true",
+         #   ),
+      #  ],
 
         [
             InlineKeyboardButton(
@@ -243,9 +243,9 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
 
         [
             InlineKeyboardButton(
-                text=_["S_B_5"],
-                url=f"https://t.me/{app.username}?startgroup=true",
-            ),
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
         ],
         [
         InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
@@ -676,11 +676,11 @@ def panel_markup_1(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="🎧",
+                text="🔀",
                 callback_data=f"ADMIN Shuffle|{chat_id}",
             ),
             InlineKeyboardButton(
-                text="↺", callback_data=f"ADMIN Loop|{chat_id}"
+                text="🔁", callback_data=f"ADMIN Loop|{chat_id}"
             ),
         ],
         [
@@ -717,23 +717,23 @@ def panel_markup_2(_, videoid, chat_id):
         ],
         [
                 InlineKeyboardButton(
-                    text="⏱︎ 0.5x",
+                    text=".5x",
                     callback_data=f"SpeedUP {chat_id}|0.5",
                 ),
                 InlineKeyboardButton(
-                    text="⏱︎ 0.75x",
+                    text=".75x",
                     callback_data=f"SpeedUP {chat_id}|0.75",
                 ),
                 InlineKeyboardButton(
-                    text="⏱︎ 1.0x",
+                    text="1x",
                     callback_data=f"SpeedUP {chat_id}|1.0",
                 ),
                 InlineKeyboardButton(
-                    text="⏱︎ 1.5x",
+                    text="1.5x",
                     callback_data=f"SpeedUP {chat_id}|1.5",
                 ),
                 InlineKeyboardButton(
-                    text="⏱︎ 2.0x",
+                    text="2x",
                     callback_data=f"SpeedUP {chat_id}|2.0",
                 ),
             ],
@@ -792,23 +792,23 @@ def panel_markup_3(_, videoid, chat_id):
     buttons = [
         [
                 InlineKeyboardButton(
-                    text="⏱︎ 0.5x",
+                    text=".5x",
                     callback_data=f"SpeedUP {chat_id}|0.5",
                 ),
                 InlineKeyboardButton(
-                    text="⏱︎ 0.75x",
+                    text=".75x",
                     callback_data=f"SpeedUP {chat_id}|0.75",
                 ),
                 InlineKeyboardButton(
-                    text="⏱︎ 1.0x",
+                    text="1x",
                     callback_data=f"SpeedUP {chat_id}|1.0",
                 ),
                 InlineKeyboardButton(
-                    text="⏱︎ 1.5x",
+                    text="1.5x",
                     callback_data=f"SpeedUP {chat_id}|1.5",
                 ),
                 InlineKeyboardButton(
-                    text="⏱︎ 2.0x",
+                    text="2x",
                     callback_data=f"SpeedUP {chat_id}|2.0",
                 ),
             ],
