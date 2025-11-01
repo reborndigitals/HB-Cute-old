@@ -605,10 +605,10 @@ async def del_back_playlist(client, CallbackQuery, _):
         )
 
 async def markup_timer():
-    while not await asyncio.sleep(7):
-        active_chats = await get_active_chats()
-        for chat_id in active_chats:
-            try:
+    while not await asyncio.sleep(7):
+        active_chats = await get_active_chats()
+        for chat_id in active_chats:
+            try:
                 if not await is_music_playing(chat_id):
                     continue
                 playing = db.get(chat_id)
