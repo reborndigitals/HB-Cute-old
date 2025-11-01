@@ -34,22 +34,6 @@ user_command_count = {}
 SPAM_THRESHOLD = 2
 SPAM_WINDOW_SECONDS = 5
 
-# 💥 Greeting images
-YUMI_PICS = [
-    "https://graph.org/file/f21bcb4b8b9c421409b64.png",
-    "https://graph.org/file/f21bcb4b8b9c421409b64.png",
-    "https://graph.org/file/f21bcb4b8b9c421409b64.png",
-]
-
-# 🧠 Mentions and reactions
-MENTION_USERNAMES = [
-    "@GhosttBatt",
-    "@rajeshrakis",
-    "@OnixGhost",
-    "@thedakkidaikathaval_bot",
-]
-START_REACTIONS = ["❤️", "🎧", "✨", "🔥", "💫", "💥", "🎶", "🌸", "⚡"]
-
 
 # ===================== /start in private =====================
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
