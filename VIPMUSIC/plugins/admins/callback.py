@@ -604,7 +604,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             f"{string}\n\nᴄʜᴀɴɢᴇs ᴅᴏɴᴇ ʙʏ : {mention} !"
         )
 async def markup_timer():
-    while not await asyncio.sleep(15):
+    while not await asyncio.sleep(60):
         active_chats = await get_active_chats()
         for chat_id in active_chats:
             try:
