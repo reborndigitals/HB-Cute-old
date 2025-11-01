@@ -257,7 +257,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         [
             InlineKeyboardButton(
                 text="💕 𝐅𖽞𖽖𖾓𖽪𖽷𖽞𖾗 🦋",
-                callback_data=f"MainMarkup {videoid}|{chat_id}",
+                callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
             ),
         ],
     ]
@@ -277,7 +277,7 @@ def stream_markup(_, videoid, chat_id):
     [
         InlineKeyboardButton(
             text="💕 𝐀𖽴ᵥ𖽖𖽝𖽞 🦋",
-            callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
+            callback_data=f"MainMarkup {videoid}|{chat_id}",
             ),
         ],
     ]
