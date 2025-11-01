@@ -103,7 +103,7 @@ async def in_help():
         InlineQueryResultArticle(
             title="⦿ Whisper ⦿",
             description=f"@{BOT_USERNAME} [USERNAME | ID] [TEXT]",
-            input_message_content=InputTextMessageContent(f"**❍ Usage:**\n\n@{BOT_USERNAME} (Target Username or ID) (Your Message).\n\n**Example:**\n@{BOT_USERNAME} @username Join @HeartBeat_Muzic Chat Group"),
+            input_message_content=InputTextMessageContent(f"**❍ Usage:**\n\n@{BOT_USERNAME} (Target Username or ID) (Your Message).\n\n**Example:**\n@{BOT_USERNAME} @user_username/id ʜᴇʏ ᴄᴜᴛɪᴇ, ɪ ᴍɪ𝗌𝗌 ᴜ "),
             thumb_url="https://graph.org/file/ffdb1be822436121cf5fd.png",
             reply_markup=switch_btn
         )
