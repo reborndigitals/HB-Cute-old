@@ -604,85 +604,73 @@ async def del_back_playlist(client, CallbackQuery, _):
             f"{string}\n\nᴄʜᴀɴɢᴇs ᴅᴏɴᴇ ʙʏ : {mention} !"
         )
 
-
-last_markup_cache = {}
+markup_updated = set()
 
 async def markup_timer():
-    while not await asyncio.sleep(5):
-        active_chats = await get_active_chats()
+    await asyncio.sleep(5)  # wait 5 seconds only once
+    active_chats = await get_active_chats()
 
-        for chat_id in active_chats:
+    for chat_id in active_chats:
+        try:
+            if chat_id in markup_updated:
+                continue  # skip if already updated once
+
+            if not await is_music_playing(chat_id):
+                continue
+
+            playing = db.get(chat_id)
+            if not playing:
+                continue
+
+            duration_seconds = int(playing[0]["seconds"])
+            if duration_seconds == 0:
+                continue
+
+            # get lang safely
             try:
-                # Skip inactive chats
-                if not await is_music_playing(chat_id):
-                    continue
+                language = await get_lang(chat_id)
+                _ = get_string(language)
+            except:
+                _ = get_string("en")
 
-                playing = db.get(chat_id)
-                if not playing:
-                    continue
+            mystic = playing[0].get("mystic")
+            markup = playing[0].get("markup")
 
-                duration_seconds = int(playing[0]["seconds"])
-                if duration_seconds == 0:
-                    continue
+            if not mystic or not markup:
+                continue
 
-                mystic = playing[0].get("mystic")
-                if not mystic:
-                    continue
-
-                markup_type = playing[0].get("markup")
-                if not markup_type:
-                    continue
-
-                # Skip if marked as incorrect
-                try:
-                    if not wrong[chat_id][mystic.id]:
-                        continue
-                except KeyError:
-                    pass
-
-                # Language setup
-                try:
-                    language = await get_lang(chat_id)
-                    _ = get_string(language)
-                except:
-                    _ = get_string("en")
-
-                # Build current buttons
-                if markup_type == "stream":
-                    buttons = stream_markup_timer(
+            # choose correct timer markup
+            try:
+                buttons = (
+                    stream_markup_timer(
                         _,
                         playing[0]["vidid"],
                         chat_id,
                         seconds_to_min(playing[0]["played"]),
                         playing[0]["dur"],
                     )
-                else:
-                    buttons = stream_markup_timer2(
+                    if markup == "stream"
+                    else stream_markup_timer2(
                         _,
                         chat_id,
                         seconds_to_min(playing[0]["played"]),
                         playing[0]["dur"],
                     )
+                )
 
-                new_markup = InlineKeyboardMarkup(buttons)
+                await mystic.edit_reply_markup(
+                    reply_markup=InlineKeyboardMarkup(buttons)
+                )
 
-                # Convert current buttons to tuple for easy comparison
-                markup_key = (chat_id, mystic.id)
-                new_markup_tuple = tuple(tuple(btn.text for btn in row) for row in buttons)
+                # Mark as updated so it doesn’t repeat again
+                markup_updated.add(chat_id)
 
-                # Get the last known markup
-                last_markup_tuple = last_markup_cache.get(markup_key)
-
-                # Update only if different
-                if new_markup_tuple != last_markup_tuple:
-                    await mystic.edit_reply_markup(reply_markup=new_markup)
-                    last_markup_cache[markup_key] = new_markup_tuple
-
-            except Exception as e:
-                # You can print(e) for debugging if needed
+            except Exception:
                 continue
 
+        except Exception:
+            continue
 
-# Run the task
+
+# Run only once (not an infinite loop)
 asyncio.create_task(markup_timer())
-                
