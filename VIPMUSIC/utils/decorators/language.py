@@ -1,6 +1,8 @@
 from VIPMUSIC.misc import SUDOERS
 from VIPMUSIC.utils.database import get_lang, is_maintenance
 from strings import get_string
+from config import SUPPORT_CHAT
+from VIPMUSIC import app
 
 
 def language(mystic):
