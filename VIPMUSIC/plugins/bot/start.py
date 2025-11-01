@@ -1,14 +1,14 @@
 import time
 from time import time
 import asyncio
-from pyrogram.errors import UserAlreadyParticipant
 import random
-from pyrogram.errors import UserNotParticipant
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
+from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
 import config
+from config import BANNED_USERS, GREET
 from VIPMUSIC import app
 from VIPMUSIC.misc import _boot_
 from VIPMUSIC.utils import bot_up_time
@@ -24,72 +24,83 @@ from VIPMUSIC.utils.database import (
 from VIPMUSIC.utils.decorators.language import LanguageStart
 from VIPMUSIC.utils.formatters import get_readable_time
 from VIPMUSIC.utils.inline import first_page, private_panel, start_panel
-from config import BANNED_USERS
-from strings import get_string
 from VIPMUSIC.utils.database import get_assistant
-from time import time
-import asyncio
 from VIPMUSIC.utils.extraction import extract_user
+from strings import get_string
 
-# Define a dictionary to track the last message timestamp for each user
+# 🚫 Anti-spam system
 user_last_message_time = {}
 user_command_count = {}
-# Define the threshold for command spamming (e.g., 20 commands within 60 seconds)
 SPAM_THRESHOLD = 2
 SPAM_WINDOW_SECONDS = 5
 
-
+# 💥 Greeting images
 YUMI_PICS = [
-"https://graph.org/file/f21bcb4b8b9c421409b64.png",
-"https://graph.org/file/f21bcb4b8b9c421409b64.png",
-"https://graph.org/file/f21bcb4b8b9c421409b64.png"
-
+    "https://graph.org/file/f21bcb4b8b9c421409b64.png",
+    "https://graph.org/file/f21bcb4b8b9c421409b64.png",
+    "https://graph.org/file/f21bcb4b8b9c421409b64.png",
 ]
 
+# 🧠 Mentions and reactions
+MENTION_USERNAMES = [
+    "@GhosttBatt",
+    "@rajeshrakis",
+    "@OnixGhost",
+    "@thedakkidaikathaval_bot",
+]
+START_REACTIONS = ["❤️", "🎧", "✨", "🔥", "💫", "💥", "🎶", "🌸", "⚡"]
 
 
+# ===================== /start in private =====================
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message, _):
     user_id = message.from_user.id
     current_time = time()
-    # Update the last message timestamp for the user
-    last_message_time = user_last_message_time.get(user_id, 0)
 
+    # Anti-spam check
+    last_message_time = user_last_message_time.get(user_id, 0)
     if current_time - last_message_time < SPAM_WINDOW_SECONDS:
-        # If less than the spam window time has passed since the last message
         user_last_message_time[user_id] = current_time
         user_command_count[user_id] = user_command_count.get(user_id, 0) + 1
         if user_command_count[user_id] > SPAM_THRESHOLD:
-            # Block the user if they exceed the threshold
-            hu = await message.reply_text(f"**{message.from_user.mention} ᴘʟᴇᴀsᴇ ᴅᴏɴᴛ ᴅᴏ sᴘᴀᴍ, ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ᴀғᴛᴇʀ 5 sᴇᴄ**")
+            hu = await message.reply_text(
+                f"**{message.from_user.mention} ᴘʟᴇᴀsᴇ ᴅᴏɴᴛ sᴘᴀᴍ, ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ᴀғᴛᴇʀ 5 sᴇᴄ**"
+            )
             await asyncio.sleep(3)
             await hu.delete()
-            return 
+            return
     else:
-        # If more than the spam window time has passed, reset the command count and update the message timestamp
         user_command_count[user_id] = 1
         user_last_message_time[user_id] = current_time
 
     await add_served_user(message.from_user.id)
+
+    # Handle special start params
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
-        if name[0:4] == "help":
+
+        # Help page
+        if name.startswith("help"):
             keyboard = first_page(_)
             return await message.reply_photo(
                 photo=config.START_IMG_URL,
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
             )
-        if name[0:3] == "sud":
+
+        # Sudo list
+        if name.startswith("sud"):
             await sudoers_list(client=client, message=message, _=_)
             if await is_on_off(2):
-                return await app.send_message(
+                await app.send_message(
                     chat_id=config.LOGGER_ID,
-                    text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>sᴜᴅᴏʟɪsᴛ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
+                    text=f"{message.from_user.mention} checked sudo list.\n\n<b>User ID:</b> <code>{message.from_user.id}</code>",
                 )
             return
-        if name[0:3] == "inf":
+
+        # Info fetcher
+        if name.startswith("inf"):
             m = await message.reply_text("🔎")
             query = (str(name)).replace("info_", "", 1)
             query = f"https://www.youtube.com/watch?v={query}"
@@ -103,73 +114,95 @@ async def start_pm(client, message: Message, _):
                 channel = result["channel"]["name"]
                 link = result["link"]
                 published = result["publishedTime"]
+
             searched_text = _["start_6"].format(
                 title, duration, views, published, channellink, channel, app.mention
             )
             key = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text= "💕 𝐕𖽹𖽴𖽞𖽙 🦋", callback_data=f"downloadvideo {query}"),
-                        InlineKeyboardButton(text= "💕 𝐀𖽪𖽴𖽹𖽙 🦋", callback_data=f"downloadaudio {query}"),
-                
+                        InlineKeyboardButton(text="💕 𝐕𖽹𖽴𖽞𖽙 🦋", callback_data=f"downloadvideo {query}"),
+                        InlineKeyboardButton(text="💕 𝐀𖽪𖽴𖽹𖽙 🦋", callback_data=f"downloadaudio {query}"),
                     ],
-                    [
-                        InlineKeyboardButton(text="🎧 sᴇᴇ ᴏɴ ʏᴏᴜᴛᴜʙᴇ 🎧", url=link),
-                    ],
+                    [InlineKeyboardButton(text="🎧 sᴇᴇ ᴏɴ ʏᴏᴜᴛᴜʙᴇ 🎧", url=link)],
                 ]
             )
             await m.delete()
             await app.send_photo(
-                chat_id=message.chat.id,
-                photo=thumbnail,
-                caption=searched_text,
-                reply_markup=key,
+                chat_id=message.chat.id, photo=thumbnail, caption=searched_text, reply_markup=key
             )
-            if await is_on_off(2):
-                return await app.send_message(
-                    chat_id=config.LOGGER_ID,
-                    text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>ᴛʀᴀᴄᴋ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
-                )
+            return
+
+    # ===== NORMAL /START WITH ANIMATIONS =====
     else:
-        out = private_panel(_)
-        await message.reply_photo(
-            photo=config.START_IMG_URL,
-            caption=_["start_2"].format(message.from_user.mention, app.mention),
-            reply_markup=InlineKeyboardMarkup(out),
-        )
-        if await is_on_off(2):
-            return await app.send_message(
-                chat_id=config.LOGGER_ID,
-                text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
+        try:
+            out = private_panel(_)
+
+            # Step 1: Greet with random emoji
+            loading_1 = await message.reply_text(random.choice(GREET))
+            await asyncio.sleep(1)
+            await loading_1.delete()
+
+            # Step 2: Ding Dong animation
+            vip = await message.reply_text("**ᴅιиg ᴅσиg ꨄ︎❣️.....**")
+            for dots in [".❣️....", "..❣️...", "...❣️..", "....❣️.", ".....❣️"]:
+                await vip.edit_text(f"**ᴅιиg ᴅσиg ꨄ︎{dots}**")
+            await asyncio.sleep(0.5)
+            await vip.delete()
+
+            # Step 3: Starting animation
+            vips = await message.reply_text("**⚡ѕ**")
+            steps = ["⚡ѕт", "⚡ѕтα", "⚡ѕтαя", "⚡ѕтαят", "⚡ѕтαятι", "⚡ѕтαятιи", "⚡ѕтαятιиg"]
+            for step in steps:
+                await vips.edit_text(f"**{step}**")
+                await asyncio.sleep(0.1)
+            for _ in range(2):
+                await vips.edit_text("**⚡ѕтαятιиg....**")
+                await asyncio.sleep(0.2)
+                await vips.edit_text("**⚡ѕтαятιиg.**")
+                await asyncio.sleep(0.2)
+            await vips.delete()
+
+            # Step 4: Normal start panel
+            await message.reply_photo(
+                photo=config.START_IMG_URL,
+                caption=_["start_2"].format(message.from_user.mention, app.mention),
+                reply_markup=InlineKeyboardMarkup(out),
             )
 
+            if await is_on_off(2):
+                await app.send_message(
+                    chat_id=config.LOGGER_ID,
+                    text=f"{message.from_user.mention} started the bot.\n\n<b>ID:</b> <code>{message.from_user.id}</code>",
+                )
 
-    
+        except Exception as e:
+            print(e)
 
+
+# ===================== /start in groups =====================
 @app.on_message(filters.command(["start"]) & filters.group & ~BANNED_USERS)
 @LanguageStart
 async def start_gp(client, message: Message, _):
     user_id = message.from_user.id
     current_time = time()
-    
-    # Update the last message timestamp for the user
     last_message_time = user_last_message_time.get(user_id, 0)
 
+    # Anti-spam
     if current_time - last_message_time < SPAM_WINDOW_SECONDS:
-        # If less than the spam window time has passed since the last message
         user_last_message_time[user_id] = current_time
         user_command_count[user_id] = user_command_count.get(user_id, 0) + 1
         if user_command_count[user_id] > SPAM_THRESHOLD:
-            # Block the user if they exceed the threshold
-            hu = await message.reply_text(f"**{message.from_user.mention} ᴘʟᴇᴀsᴇ ᴅᴏɴᴛ ᴅᴏ sᴘᴀᴍ, ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ᴀғᴛᴇʀ 5 sᴇᴄ**")
+            hu = await message.reply_text(
+                f"**{message.from_user.mention} ᴘʟᴇᴀsᴇ ᴅᴏɴᴛ sᴘᴀᴍ, ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ᴀғᴛᴇʀ 5 sᴇᴄ**"
+            )
             await asyncio.sleep(3)
             await hu.delete()
-            return 
+            return
     else:
-        # If more than the spam window time has passed, reset the command count and update the message timestamp
         user_command_count[user_id] = 1
         user_last_message_time[user_id] = current_time
-        
+
     out = start_panel(_)
     BOT_UP = await bot_up_time()
     await message.reply_photo(
@@ -178,39 +211,49 @@ async def start_gp(client, message: Message, _):
         reply_markup=InlineKeyboardMarkup(out),
     )
     await add_served_chat(message.chat.id)
-    
-    # Check if Userbot is already in the group
+
+    # Assistant check
     try:
         userbot = await get_assistant(message.chat.id)
-        message = await message.reply_text(f"**ᴄʜᴇᴄᴋɪɴɢ [ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}) ᴀᴠᴀɪʟᴀʙɪʟɪᴛʏ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ...**")
+        msg = await message.reply_text(
+            f"**ᴄʜᴇᴄᴋɪɴɢ [ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}) ᴀᴠᴀɪʟᴀʙɪʟɪᴛʏ...**"
+        )
         is_userbot = await app.get_chat_member(message.chat.id, userbot.id)
         if is_userbot:
-            await message.edit_text(f"**[ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}) ᴀʟsᴏ ᴀᴄᴛɪᴠᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ, ʏᴏᴜ ᴄᴀɴ ᴘʟᴀʏ sᴏɴɢs.**")
-    except Exception as e:
-        # Userbot is not in the group, invite it
+            await msg.edit_text(
+                f"**[ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}) ᴀʟʀᴇᴀᴅʏ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ.**"
+            )
+    except Exception:
         try:
-            await message.edit_text(f"**[ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}) ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ, ɪɴᴠɪᴛɪɴɢ...**")
+            await msg.edit_text(
+                f"**[ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}) ɴᴏᴛ ɪɴ ɢʀᴏᴜᴘ, ɪɴᴠɪᴛɪɴɢ...**"
+            )
             invitelink = await app.export_chat_invite_link(message.chat.id)
             await asyncio.sleep(1)
             await userbot.join_chat(invitelink)
-            await message.edit_text(f"**[ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}) ɪs ɴᴏᴡ ᴀᴄᴛɪᴠᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ, ʏᴏᴜ ᴄᴀɴ ᴘʟᴀʏ sᴏɴɢs.**")
-        except Exception as e:
-            await message.edit_text(f"**ᴜɴᴀʙʟᴇ ᴛᴏ ɪɴᴠɪᴛᴇ ᴍʏ [ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}). ᴘʟᴇᴀsᴇ ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ᴡɪᴛʜ ɪɴᴠɪᴛᴇ ᴜsᴇʀ ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ᴛᴏ ɪɴᴠɪᴛᴇ ᴍʏ [ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}) ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ.**")
+            await msg.edit_text(
+                f"**[ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}) ɴᴏᴡ ᴀᴄᴛɪᴠᴇ.**"
+            )
+        except Exception:
+            await msg.edit_text(
+                f"**ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ᴡɪᴛʜ ɪɴᴠɪᴛᴇ ᴜsᴇʀ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ᴀᴅᴅ [ᴀssɪsᴛᴀɴᴛ](tg://openmessage?user_id={userbot.id}).**"
+            )
 
 
-
-
+# ===================== Welcome new members =====================
 @app.on_message(filters.new_chat_members, group=-1)
 async def welcome(client, message: Message):
     for member in message.new_chat_members:
         try:
             language = await get_lang(message.chat.id)
             _ = get_string(language)
+
             if await is_banned_user(member.id):
                 try:
                     await message.chat.ban_member(member.id)
-                except Exception as e:
-                    print(e)
+                except Exception:
+                    pass
+
             if member.id == app.id:
                 if message.chat.type != ChatType.SUPERGROUP:
                     await message.reply_text(_["start_4"])
@@ -229,26 +272,16 @@ async def welcome(client, message: Message):
                     return
 
                 out = start_panel(_)
-                chid = message.chat.id
-                
                 try:
                     userbot = await get_assistant(message.chat.id)
-    
-                    chid = message.chat.id
-                    
-                    
                     if message.chat.username:
                         await userbot.join_chat(f"{message.chat.username}")
-                        await message.reply_text(f"**My [Assistant](tg://openmessage?user_id={userbot.id}) also entered the chat using the group's username.**")
                     else:
-                        invitelink = await app.export_chat_invite_link(chid)
+                        invitelink = await app.export_chat_invite_link(message.chat.id)
                         await asyncio.sleep(1)
-                        messages = await message.reply_text(f"**Joining my [Assistant](tg://openmessage?user_id={userbot.id}) using the invite link...**")
                         await userbot.join_chat(invitelink)
-                        await messages.delete()
-                        await message.reply_text(f"**My [Assistant](tg://openmessage?user_id={userbot.id}) also entered the chat using the invite link.**")
-                except Exception as e:
-                    await message.edit_text(f"**Please make me admin to invite my [Assistant](tg://openmessage?user_id={userbot.id}) in this chat.**")
+                except Exception:
+                    pass
 
                 await message.reply_photo(
                     random.choice(YUMI_PICS),
@@ -262,5 +295,17 @@ async def welcome(client, message: Message):
                 )
                 await add_served_chat(message.chat.id)
                 await message.stop_propagation()
-        except Exception as ex:
-            print(ex)
+        except Exception:
+            pass
+
+
+# ===================== Mention Reaction (Both Private & Groups) =====================
+@app.on_message(filters.text & ~BANNED_USERS)
+async def react_on_mentions(client, message: Message):
+    text = message.text.lower()
+    if any(name.lower() in text for name in MENTION_USERNAMES):
+        try:
+            emoji = random.choice(START_REACTIONS)
+            await message.react(emoji)
+        except Exception:
+            pass
