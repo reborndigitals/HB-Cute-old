@@ -419,7 +419,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 photo=img,
                 caption=_["stream_1"].format(
                     f"https://t.me/{app.username}?start=info_{videoid}",
-                    title[:23],
+                    title[:11],
                     duration,
                     user,
                 ),
@@ -455,7 +455,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 photo=img,
                 caption=_["stream_1"].format(
                     f"https://t.me/{app.username}?start=info_{videoid}",
-                    title[:23],
+                    title[:11],
                     duration,
                     user,
                 ),
@@ -500,7 +500,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     if str(streamtype) == "audio"
                     else TELEGRAM_VIDEO_URL,
                     caption=_["stream_1"].format(
-                        config.SUPPORT_CHAT, title[:23], duration, user
+                        config.SUPPORT_CHAT, title[:11], duration, user
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
@@ -513,7 +513,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     if str(streamtype) == "audio"
                     else TELEGRAM_VIDEO_URL,
                     caption=_["stream_1"].format(
-                        config.SUPPORT_CHAT, title[:23], duration, user
+                        config.SUPPORT_CHAT, title[:11], duration, user
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
@@ -526,7 +526,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     photo=img,
                     caption=_["stream_1"].format(
                         f"https://t.me/{app.username}?start=info_{videoid}",
-                        title[:23],
+                        title[:11],
                         duration,
                         user,
                     ),
