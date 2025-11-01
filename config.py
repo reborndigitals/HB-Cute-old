@@ -117,6 +117,12 @@ clean = {}
 
 autoclean = []
 
+YUMI_PICS = [
+    "https://graph.org/file/f21bcb4b8b9c421409b64.png",
+    "https://graph.org/file/f21bcb4b8b9c421409b64.png",
+    "https://graph.org/file/f21bcb4b8b9c421409b64.png",
+]
+
 START_IMG_URL = getenv(
     "START_IMG_URL", "https://graph.org/file/f21bcb4b8b9c421409b64.png"
 )
