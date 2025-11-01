@@ -603,91 +603,86 @@ async def del_back_playlist(client, CallbackQuery, _):
         await mystic.edit_text(
             f"{string}\n\nᴄʜᴀɴɢᴇs ᴅᴏɴᴇ ʙʏ : {mention} !"
         )
+
+
+last_markup_cache = {}
+
 async def markup_timer():
-    while not await asyncio.sleep(60):
+    while not await asyncio.sleep(5):
         active_chats = await get_active_chats()
+
         for chat_id in active_chats:
             try:
+                # Skip inactive chats
                 if not await is_music_playing(chat_id):
                     continue
+
                 playing = db.get(chat_id)
                 if not playing:
                     continue
+
                 duration_seconds = int(playing[0]["seconds"])
                 if duration_seconds == 0:
                     continue
-                try:
-                    mystic = playing[0]["markup"]
-                except:
+
+                mystic = playing[0].get("mystic")
+                if not mystic:
                     continue
+
+                markup_type = playing[0].get("markup")
+                if not markup_type:
+                    continue
+
+                # Skip if marked as incorrect
                 try:
-                    check = checker[chat_id][mystic.id]
-                    if check is False:
+                    if not wrong[chat_id][mystic.id]:
                         continue
-                except:
+                except KeyError:
                     pass
+
+                # Language setup
                 try:
                     language = await get_lang(chat_id)
                     _ = get_string(language)
                 except:
                     _ = get_string("en")
-                try:
-                    mystic = playing[0]["mystic"]
-                    markup = playing[0]["markup"]
-                except:
-                    continue
-                try:
-                    check = wrong[chat_id][mystic.id]
-                    if check is False:
-                        continue
-                except:
-                    pass
-                try:
-                    language = await get_lang(chat_id)
-                    _ = get_string(language)
-                except:
-                    _ = get_string("en")
-                try:
-                    mystic = playing[0]["mystic"]
-                    markup = playing[0]["markup"]
-                except:
-                    continue
-                try:
-                    check = wrong[chat_id][mystic.id]
-                    if check is False:
-                        continue
-                except:
-                    pass
-                try:
-                    language = await get_lang(chat_id)
-                    _ = get_string(language)
-                except:
-                    _ = get_string("en")
-                try:
-                    buttons = (
-                        stream_markup_timer(
-                            _,
-                            playing[0]["vidid"],
-                            chat_id,
-                            seconds_to_min(playing[0]["played"]),
-                            playing[0]["dur"],
-                        )
-                        if markup == "stream"
-                        else stream_markup_timer2(
-                            _,
-                            chat_id,
-                            seconds_to_min(playing[0]["played"]),
-                            playing[0]["dur"],
-                        )
+
+                # Build current buttons
+                if markup_type == "stream":
+                    buttons = stream_markup_timer(
+                        _,
+                        playing[0]["vidid"],
+                        chat_id,
+                        seconds_to_min(playing[0]["played"]),
+                        playing[0]["dur"],
                     )
-                    await mystic.edit_reply_markup(
-                        reply_markup=InlineKeyboardMarkup(buttons)
+                else:
+                    buttons = stream_markup_timer2(
+                        _,
+                        chat_id,
+                        seconds_to_min(playing[0]["played"]),
+                        playing[0]["dur"],
                     )
-                except:
-                    continue
-            except:
+
+                new_markup = InlineKeyboardMarkup(buttons)
+
+                # Convert current buttons to tuple for easy comparison
+                markup_key = (chat_id, mystic.id)
+                new_markup_tuple = tuple(tuple(btn.text for btn in row) for row in buttons)
+
+                # Get the last known markup
+                last_markup_tuple = last_markup_cache.get(markup_key)
+
+                # Update only if different
+                if new_markup_tuple != last_markup_tuple:
+                    await mystic.edit_reply_markup(reply_markup=new_markup)
+                    last_markup_cache[markup_key] = new_markup_tuple
+
+            except Exception as e:
+                # You can print(e) for debugging if needed
                 continue
 
 
+# Run the task
 asyncio.create_task(markup_timer())
                 
