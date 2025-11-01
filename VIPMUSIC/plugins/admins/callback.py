@@ -604,16 +604,18 @@ async def del_back_playlist(client, CallbackQuery, _):
             f"{string}\n\nᴄʜᴀɴɢᴇs ᴅᴏɴᴇ ʙʏ : {mention} !"
         )
 
-markup_updated = set()
+# Track which chats have already been updated once
+markup_done = set()
 
 async def markup_timer():
-    await asyncio.sleep(5)  # wait 5 seconds only once
+    await asyncio.sleep(5)  # wait 5 seconds only once (not a loop)
     active_chats = await get_active_chats()
 
     for chat_id in active_chats:
         try:
-            if chat_id in markup_updated:
-                continue  # skip if already updated once
+            # Skip if already updated once
+            if chat_id in markup_done:
+                continue
 
             if not await is_music_playing(chat_id):
                 continue
@@ -626,20 +628,20 @@ async def markup_timer():
             if duration_seconds == 0:
                 continue
 
-            # get lang safely
+            # safely get language
             try:
                 language = await get_lang(chat_id)
                 _ = get_string(language)
             except:
                 _ = get_string("en")
 
+            # get mystic + markup
             mystic = playing[0].get("mystic")
             markup = playing[0].get("markup")
-
             if not mystic or not markup:
                 continue
 
-            # choose correct timer markup
+            # select correct button set
             try:
                 buttons = (
                     stream_markup_timer(
@@ -662,8 +664,8 @@ async def markup_timer():
                     reply_markup=InlineKeyboardMarkup(buttons)
                 )
 
-                # Mark as updated so it doesn’t repeat again
-                markup_updated.add(chat_id)
+                # mark as completed (won’t trigger again)
+                markup_done.add(chat_id)
 
             except Exception:
                 continue
@@ -672,5 +674,5 @@ async def markup_timer():
             continue
 
 
-# Run only once (not an infinite loop)
+# run once, not a continuous loop
 asyncio.create_task(markup_timer())
