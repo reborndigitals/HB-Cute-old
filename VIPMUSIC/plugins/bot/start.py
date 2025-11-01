@@ -1,23 +1,7 @@
-# -*- coding: utf-8 -*-
-# start.py — Fixed to handle UnicodeEncodeError safely
-
-import sys
-import io
 import asyncio
 import random
+import re
 import time
-
-# Force UTF-8 safe output for all prints/logs
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='ignore')
-sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='ignore')
-
-# Helper to safely handle user text or invalid characters
-def safe_text(text):
-    """Remove invalid unicode surrogates from text safely."""
-    if isinstance(text, str):
-        return text.encode("utf-8", "ignore").decode("utf-8", "ignore")
-    return str(text)
-
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
@@ -27,8 +11,8 @@ from youtubesearchpython.__future__ import VideosSearch
 import config
 from VIPMUSIC import app
 from VIPMUSIC.misc import _boot_
-from VIPMUSIC.utils import bot_up_time
 from VIPMUSIC.plugins.sudo.sudoers import sudoers_list
+from VIPMUSIC.utils import bot_up_time
 from VIPMUSIC.utils.database import (
     add_served_chat,
     add_served_user,
@@ -36,16 +20,36 @@ from VIPMUSIC.utils.database import (
     get_lang,
     is_banned_user,
     is_on_off,
+    get_assistant,
 )
 from VIPMUSIC.utils.decorators.language import LanguageStart
 from VIPMUSIC.utils.formatters import get_readable_time
 from VIPMUSIC.utils.inline import first_page, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
-from VIPMUSIC.utils.database import get_assistant
-from VIPMUSIC.utils.extraction import extract_user
 
-# Spam protection
+# --- FIX for UnicodeEncodeError ---
+_surrogate_re = re.compile(r'[\ud800-\udfff]')
+
+def clean_surrogates(text):
+    """Removes broken surrogate unicode characters that crash Telegram API"""
+    if not isinstance(text, str):
+        text = str(text)
+    return _surrogate_re.sub('', text)
+
+
+# --- Monkey patch Pyrogram to auto-clean captions ---
+from pyrogram.types import Message
+
+old_reply_photo = Message.reply_photo
+async def safe_reply_photo(self, *args, **kwargs):
+    if "caption" in kwargs:
+        kwargs["caption"] = clean_surrogates(kwargs["caption"])
+    return await old_reply_photo(self, *args, **kwargs)
+
+Message.reply_photo = safe_reply_photo
+# -----------------------------------
+
 user_last_message_time = {}
 user_command_count = {}
 SPAM_THRESHOLD = 2
@@ -64,14 +68,14 @@ async def start_pm(client, message: Message, _):
     user_id = message.from_user.id
     current_time = time.time()
 
-    # spam protection
     last_message_time = user_last_message_time.get(user_id, 0)
+
     if current_time - last_message_time < SPAM_WINDOW_SECONDS:
         user_last_message_time[user_id] = current_time
         user_command_count[user_id] = user_command_count.get(user_id, 0) + 1
         if user_command_count[user_id] > SPAM_THRESHOLD:
             hu = await message.reply_text(
-                safe_text(f"**{message.from_user.mention} please don’t spam, try again after 5 seconds.**")
+                f"**{message.from_user.mention} ᴘʟᴇᴀsᴇ ᴅᴏɴᴛ sᴘᴀᴍ, ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ᴀғᴛᴇʀ 5 sᴇᴄ**"
             )
             await asyncio.sleep(3)
             await hu.delete()
@@ -80,7 +84,7 @@ async def start_pm(client, message: Message, _):
         user_command_count[user_id] = 1
         user_last_message_time[user_id] = current_time
 
-    await add_served_user(message.from_user.id)
+    await add_served_user(user_id)
 
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
@@ -88,7 +92,7 @@ async def start_pm(client, message: Message, _):
             keyboard = first_page(_)
             return await message.reply_photo(
                 photo=config.START_IMG_URL,
-                caption=safe_text(_["help_1"].format(config.SUPPORT_CHAT)),
+                caption=clean_surrogates(_["help_1"].format(config.SUPPORT_CHAT)),
                 reply_markup=keyboard,
             )
 
@@ -97,10 +101,10 @@ async def start_pm(client, message: Message, _):
             if await is_on_off(2):
                 await app.send_message(
                     chat_id=config.LOGGER_ID,
-                    text=safe_text(
-                        f"{message.from_user.mention} just started the bot to check <b>sudo list</b>.\n\n"
-                        f"<b>User ID:</b> <code>{message.from_user.id}</code>\n"
-                        f"<b>Username:</b> @{message.from_user.username}"
+                    text=clean_surrogates(
+                        f"{message.from_user.mention} started bot to check <b>sᴜᴅᴏʟɪsᴛ</b>.\n\n"
+                        f"<b>ᴜsᴇʀ ɪᴅ :</b> <code>{user_id}</code>\n"
+                        f"<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}"
                     ),
                 )
             return
@@ -119,23 +123,16 @@ async def start_pm(client, message: Message, _):
                 channel = result["channel"]["name"]
                 link = result["link"]
                 published = result["publishedTime"]
-
-            searched_text = safe_text(
-                _["start_6"].format(
-                    title, duration, views, published, channellink, channel, app.mention
-                )
+            searched_text = clean_surrogates(
+                _["start_6"].format(title, duration, views, published, channellink, channel, app.mention)
             )
             key = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(
-                            text="💕 𝐕𖽹𖽴𖽞𖽙 🦋", callback_data=f"downloadvideo {query}"
-                        ),
-                        InlineKeyboardButton(
-                            text="💕 𝐀𖽪𖽴𖽹𖽙 🦋", callback_data=f"downloadaudio {query}"
-                        ),
+                        InlineKeyboardButton(text="💕 𝐕𖽹𖽴𖽞𖽙 🦋", callback_data=f"downloadvideo {query}"),
+                        InlineKeyboardButton(text="💕 𝐀𖽪𖽴𖽹𖽙 🦋", callback_data=f"downloadaudio {query}"),
                     ],
-                    [InlineKeyboardButton(text="🎧 See on YouTube 🎧", url=link)],
+                    [InlineKeyboardButton(text="🎧 sᴇᴇ ᴏɴ ʏᴏᴜᴛᴜʙᴇ 🎧", url=link)],
                 ]
             )
             await m.delete()
@@ -148,26 +145,27 @@ async def start_pm(client, message: Message, _):
             if await is_on_off(2):
                 await app.send_message(
                     chat_id=config.LOGGER_ID,
-                    text=safe_text(
-                        f"{message.from_user.mention} started the bot to check <b>track info</b>.\n\n"
-                        f"<b>User ID:</b> <code>{message.from_user.id}</code>\n"
-                        f"<b>Username:</b> @{message.from_user.username}"
+                    text=clean_surrogates(
+                        f"{message.from_user.mention} checked <b>ᴛʀᴀᴄᴋ ɪɴғᴏ</b>.\n\n"
+                        f"<b>ᴜsᴇʀ ɪᴅ :</b> <code>{user_id}</code>\n"
+                        f"<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}"
                     ),
                 )
     else:
         out = private_panel(_)
+        caption = clean_surrogates(_["start_2"].format(message.from_user.mention, app.mention))
         await message.reply_photo(
             photo=config.START_IMG_URL,
-            caption=safe_text(_["start_2"].format(message.from_user.mention, app.mention)),
+            caption=caption,
             reply_markup=InlineKeyboardMarkup(out),
         )
         if await is_on_off(2):
             await app.send_message(
                 chat_id=config.LOGGER_ID,
-                text=safe_text(
-                    f"{message.from_user.mention} just started the bot.\n\n"
-                    f"<b>User ID:</b> <code>{message.from_user.id}</code>\n"
-                    f"<b>Username:</b> @{message.from_user.username}"
+                text=clean_surrogates(
+                    f"{message.from_user.mention} started the bot.\n\n"
+                    f"<b>ᴜsᴇʀ ɪᴅ :</b> <code>{user_id}</code>\n"
+                    f"<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}"
                 ),
             )
 
@@ -184,7 +182,7 @@ async def start_gp(client, message: Message, _):
         user_command_count[user_id] = user_command_count.get(user_id, 0) + 1
         if user_command_count[user_id] > SPAM_THRESHOLD:
             hu = await message.reply_text(
-                safe_text(f"**{message.from_user.mention} please don’t spam, try again after 5 seconds.**")
+                f"**{message.from_user.mention} ᴘʟᴇᴀsᴇ ᴅᴏɴᴛ sᴘᴀᴍ, ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ᴀғᴛᴇʀ 5 sᴇᴄ**"
             )
             await asyncio.sleep(3)
             await hu.delete()
@@ -197,38 +195,35 @@ async def start_gp(client, message: Message, _):
     BOT_UP = await bot_up_time()
     await message.reply_photo(
         photo=config.START_IMG_URL,
-        caption=safe_text(_["start_1"].format(app.mention, BOT_UP)),
+        caption=clean_surrogates(_["start_1"].format(app.mention, BOT_UP)),
         reply_markup=InlineKeyboardMarkup(out),
     )
     await add_served_chat(message.chat.id)
 
     try:
         userbot = await get_assistant(message.chat.id)
-        msg = await message.reply_text(
-            safe_text(f"Checking [assistant](tg://openmessage?user_id={userbot.id}) availability...")
+        checking = await message.reply_text(
+            f"**Checking [Assistant](tg://openmessage?user_id={userbot.id}) availability...**"
         )
         is_userbot = await app.get_chat_member(message.chat.id, userbot.id)
         if is_userbot:
-            await msg.edit_text(
-                safe_text(f"[Assistant](tg://openmessage?user_id={userbot.id}) is already active in this group.")
+            await checking.edit_text(
+                f"**[Assistant](tg://openmessage?user_id={userbot.id}) is active here! You can play music.**"
             )
     except Exception:
         try:
-            await msg.edit_text(
-                safe_text(f"Inviting [assistant](tg://openmessage?user_id={userbot.id}) to the group...")
+            await checking.edit_text(
+                f"**Inviting [Assistant](tg://openmessage?user_id={userbot.id})...**"
             )
             invitelink = await app.export_chat_invite_link(message.chat.id)
             await asyncio.sleep(1)
             await userbot.join_chat(invitelink)
-            await msg.edit_text(
-                safe_text(f"[Assistant](tg://openmessage?user_id={userbot.id}) is now active in this group.")
+            await checking.edit_text(
+                f"**[Assistant](tg://openmessage?user_id={userbot.id}) joined the chat successfully!**"
             )
         except Exception:
-            await msg.edit_text(
-                safe_text(
-                    f"Unable to invite [assistant](tg://openmessage?user_id={userbot.id}). "
-                    f"Please make me admin with invite permissions."
-                )
+            await checking.edit_text(
+                f"**Make me admin with invite permissions to add my [Assistant](tg://openmessage?user_id={userbot.id}).**"
             )
 
 
@@ -250,7 +245,7 @@ async def welcome(client, message: Message):
                     return
                 if message.chat.id in await blacklisted_chats():
                     await message.reply_text(
-                        safe_text(
+                        clean_surrogates(
                             _["start_5"].format(
                                 app.mention,
                                 f"https://t.me/{app.username}?start=sudolist",
@@ -264,35 +259,31 @@ async def welcome(client, message: Message):
 
                 out = start_panel(_)
                 chid = message.chat.id
-
                 try:
-                    userbot = await get_assistant(message.chat.id)
+                    userbot = await get_assistant(chid)
                     if message.chat.username:
                         await userbot.join_chat(f"{message.chat.username}")
                         await message.reply_text(
-                            safe_text(f"My [assistant](tg://openmessage?user_id={userbot.id}) joined using username.")
+                            f"**My [Assistant](tg://openmessage?user_id={userbot.id}) joined via username.**"
                         )
                     else:
                         invitelink = await app.export_chat_invite_link(chid)
                         msg = await message.reply_text(
-                            safe_text(f"Joining [assistant](tg://openmessage?user_id={userbot.id}) using invite link...")
+                            f"**Joining my [Assistant](tg://openmessage?user_id={userbot.id}) via invite link...**"
                         )
-                        await asyncio.sleep(1)
                         await userbot.join_chat(invitelink)
                         await msg.delete()
                         await message.reply_text(
-                            safe_text(f"My [assistant](tg://openmessage?user_id={userbot.id}) joined using invite link.")
+                            f"**My [Assistant](tg://openmessage?user_id={userbot.id}) joined successfully.**"
                         )
                 except Exception:
                     await message.reply_text(
-                        safe_text(
-                            f"Please make me admin to invite my [assistant](tg://openmessage?user_id={userbot.id})."
-                        )
+                        f"**Make me admin to invite my [Assistant](tg://openmessage?user_id={userbot.id}).**"
                     )
 
                 await message.reply_photo(
                     random.choice(YUMI_PICS),
-                    caption=safe_text(
+                    caption=clean_surrogates(
                         _["start_3"].format(
                             message.from_user.first_name,
                             app.mention,
@@ -305,4 +296,4 @@ async def welcome(client, message: Message):
                 await add_served_chat(message.chat.id)
                 await message.stop_propagation()
         except Exception as ex:
-            print(safe_text(ex))
+            print(ex)
