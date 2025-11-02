@@ -156,7 +156,7 @@ async def start_pm(client, message: Message,_):
             # Step 4: Normal start panel
             await message.reply_photo(
                 photo=config.START_IMG_URL,
-                caption=_["start_2"].format(str(message.from_user.id))#.format(message.from_user.mention, app.mention),
+                caption=_["start_2"].format(str(message.from_user.id)),#.format(message.from_user.mention, app.mention),
                 reply_markup=InlineKeyboardMarkup(out),
             )
 
