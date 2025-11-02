@@ -10,60 +10,7 @@ AUTO_GCASTS = f"{AUTO_GCAST}" if AUTO_GCAST else False
 
 START_IMG_URLS = "https://graph.org/file/ffdb1be822436121cf5fd.png"
 
-MESSAGES = f"""𝘽𝙊𝙏 𝙁𝙀𝘼𝙏𝙐𝙍𝙀𝙎: (•‌ᴗ•‌)و
-
-⍟𝗌ᴜᴘᴘᴏʀᴛ ʏᴏᴜᴛᴜʙᴇ ʟɪɴᴋ𝗌 ⍟ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪᴄᴇ ⍟ ᴠᴄ-ɪɴᴠɪᴛᴇ ᴄᴀʀᴅ ⍟ ᴘʟᴀʏ ᴡɪᴛʜᴏᴜᴛ 𝗌ʟᴀ𝗌ʜ
-
-✰ 𝐏𝐥𝐚𝐲𝐢𝐧𝐠 𝐒𝐨𝐧𝐠𝐬 & 𝐕𝐢𝐝𝐞𝐨𝐬 💫 (𝑆𝑢𝑝𝑝𝑜𝑟𝑡 𝑌𝑜𝑢𝑡𝑢𝑏𝑒 𝑙𝑖𝑛𝑘𝑠) 
-➻ /play or play
-➻ /vplay or vplay
-
-✰ 𝐌𝐞𝐧𝐭𝐢𝐨𝐧/𝐓𝐚𝐠𝐀𝐥𝐥:💫
-➻ /tagall
-➻ /vctag
-➻ /heartbeat /honeymoon
-➻ /gmtag /gntag
-➻ /tamiltag
-
-😻ᴘʀᴏ ғᴇᴀᴛᴜʀᴇ𝗌 ᴜɴʟᴏᴄᴋᴇᴅ🥳
-✰ 𝑭𝒖𝒏 𝑻𝒂𝒈𝒔:🥂
-➻ /lifeline
-➻ /lovebeats
-➻ /heartbeat
-➻ /couples
-➻ /love (BoyName) (GirlName)
-
-✰ 𝐖𝐡𝐢𝐬𝐩𝐞𝐫 𝐌𝐞𝐬𝐬𝐚𝐠𝐞𝐬:🥂
-(𝑆𝑢𝑝𝑝𝑜𝑟𝑡 𝘗𝘔/𝑂𝑛𝑒 𝑇𝑖𝑚𝑒 𝑉𝑖𝑒𝑤)
-➻ @BotUsername @User_UserName (Text Message)
-
-✰ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐒𝐨𝐧𝐠𝐬 𝐕𝐢𝐝𝐞𝐨𝐬:🥂
-(𝑆𝑢𝑝𝑝𝑜𝑟𝑡 𝐼𝑛𝑠𝑡𝑎 𝑅𝑒𝑎𝑙𝑠 𝑑𝑜𝑤𝑛𝑙𝑜𝑎𝑑)
-➻ /song Song Name
-➻ /video Song Name
-➻ /insta InstaLink
-
-✰ 𝐓𝐨𝐩 𝐔𝐬𝐞𝐫𝐬🥂
-➻ /ranking
-
-✰ 𝐍𝐚𝐦𝐞 𝐇𝐢𝐬𝐭𝐨𝐫𝐲🥂
-➻ /sg (replay user message|id)
-
-✰ 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐞 𝐒𝐭𝐲𝐥𝐢𝐬𝐡 𝐅𝐨𝐧𝐭𝐬:🥂
-➻ /font (Text)
-
-💕Sᴜᴘᴘᴏʀᴛ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ Fᴇᴀᴛᴜʀᴇ𝗌 Lɪᴋᴇ:🦋
-𝙸𝙳, 𝙸𝚗𝚏𝚘, 𝙵𝚒𝚕𝚝𝚎𝚛𝚜, 𝙱𝚊𝚗𝚜, 𝙼𝚞𝚝𝚎𝚜, 𝚎𝚝𝚌,.
-
-----------------------------------
-😈😈𝘼𝙇𝙇 𝙁𝙀𝘼𝙏𝙐𝙍𝙀𝙎 𝘼𝙍𝙀 𝘼𝙑𝘼𝙄𝙇𝘼𝘽𝙇𝙀 𝑶𝑵𝑳𝒀  𝙄𝙉 𝙏𝙃𝙄𝙎 𝘽𝙊𝙏🥵🥵
-----------------------------------
-
-𝑃𝑜𝑤𝑒𝑟 𝐵𝑦 - [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)😎✨
-
-𝑂𝑤𝑛𝑒𝑟 - [𝅗ـﮩ٨ـ𝅽𝅾𓆩𑫏ⳢⅬᤌໍᤌ᭄ᰈⅬᤌໍᤌ𑂞ⳣവᰈᮀ།ໍᴮᴬᵀ🦇𓆪ﮩ٨ـ𝅽𝅾‐𝅘](https://t.me/rajeshrakis) 
-
-𝑁𝑒𝑡𝑤𝑜𝑟𝑘 - [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Offi) 😎✨"""
+MESSAGES = f""
 
 BUTTONS = InlineKeyboardMarkup(
     [
