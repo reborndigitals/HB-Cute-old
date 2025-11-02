@@ -41,8 +41,8 @@ SPAM_WINDOW_SECONDS = 5
 async def start_pm(client, message: Message,_):
     _ = await get_lang(message.chat.id)
     # ✅ FIX: Make sure _ is always a dict
-    if not isinstance(_, dict):
-        _ = {}
+   # if not isinstance(_, dict):
+      #  _ = {}
         
     user_id = message.from_user.id
     current_time = time()
