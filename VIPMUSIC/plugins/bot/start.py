@@ -40,7 +40,7 @@ SPAM_WINDOW_SECONDS = 5
 @LanguageStart
 async def start_pm(client, message: Message,_):
     print("DEBUG types:", type(_), type(_["start_1"]) if isinstance(_, dict) and "start_1" in _ else "no key")
-    _ = await get_lang(message.chat.id)
+    #_ = await get_lang(message.chat.id)
      # ✅ FIX: Make sure _ is always a dict
     if not isinstance(_, dict):
         _ = {}
