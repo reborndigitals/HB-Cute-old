@@ -144,7 +144,7 @@ GREET = [
     "💞", "🥂", "🔍", "🧪", "🥂", "⚡️", "🔥", "🦋", "🎩", "🌈", "🍷", "🥂", "🦋", "🥃", "🥤", "🕊️",
     "🦋", "🦋", "🕊️", "⚡️", "🕊️", "⚡️", "⚡️", "🥂", "💌", "🥂", "🥂", "🧨"
 ]
-MENTION_USERNAMES = ["@GhosttBatt", "@rajeshrakis", "@OnixGhost", "@thedakkidaikathaval_bot"]
+MENTION_USERNAMES = ["@GhosttBatt", "@rajeshrakis", "@OnixGhost", "@thedakkidaikathaval_bot", "/start", "/help", "Ghost Bat", "Shasha", "bat" ]
 START_REACTIONS = ["❤️", "🎧", "✨", "🔥", "💫", "💥", "🎶", "🌸", "⚡"]
 
 def time_to_seconds(time):
