@@ -15,7 +15,7 @@ MESSAGES = f""
 BUTTONS = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("💕‌𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬‌𝞑𝘌𝘈𝘛𝆺𝅥🦋", url=f"https://t.me/{SUPPORT_CHAT}")
+            InlineKeyboardButton("💕‌𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬‌𝞑𝘌𝘈𝘛𝆺𝅥🦋", url=f"{SUPPORT_CHAT}")
         ]
     ]
 )
@@ -57,7 +57,7 @@ async def continuous_broadcast():
                 pass
 
         # Wait for 100000 seconds before next broadcast
-        await asyncio.sleep(100000)
+        await asyncio.sleep(28800) #8 hour once
 
 # Start the continuous broadcast loop if AUTO_GCAST is True
 if AUTO_GCAST:  
