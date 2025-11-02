@@ -38,7 +38,7 @@ SPAM_WINDOW_SECONDS = 5
 # ===================== /start in private =====================
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
-async def start_pm(client, message: Message):
+async def start_pm(client, message: Message,_):
     _ = await get_lang(message.chat.id)
     # ✅ FIX: Make sure _ is always a dict
     if not isinstance(_, dict):
