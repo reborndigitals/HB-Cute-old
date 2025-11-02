@@ -3,7 +3,7 @@ import datetime
 from VIPMUSIC import app
 from pyrogram import Client
 from VIPMUSIC.utils.database import get_served_chats
-from config import START_IMG_URL, AUTO_GCAST_MSG, AUTO_GCAST, LOGGER_ID
+from config import START_IMG_URL, AUTO_GCAST_MSG, AUTO_GCAST, LOGGER_ID, SUPPORT_CHAT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 AUTO_GCASTS = f"{AUTO_GCAST}" if AUTO_GCAST else False
@@ -15,7 +15,7 @@ MESSAGES = f""
 BUTTONS = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("💕‌𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬‌𝞑𝘌𝘈𝘛𝆺𝅥🦋", url=f"https://t.me/HeartBeat_Muzic")
+            InlineKeyboardButton("💕‌𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬‌𝞑𝘌𝘈𝘛𝆺𝅥🦋", url=f"https://t.me/{SUPPORT_CHAT}")
         ]
     ]
 )
