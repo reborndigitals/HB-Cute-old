@@ -38,37 +38,22 @@ SPAM_WINDOW_SECONDS = 5
 # ===================== /start in private =====================
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
-async def start_pm(client, message: Message,_):
-    print("DEBUG _ type:", type(_))
-    print("DEBUG start_2 type:", type(_["start_2"]) if isinstance(_, dict) and "start_2" in _ else "no key")
-    print("DEBUG start_2 value:", _["start_2"][:100] if isinstance(_, dict) and "start_2" in _ else "missing key")
-
+async def start_pm(client, message: Message, _):
+    # ---- Prepare caption safely ----
     try:
         caption = _["start_2"].format(str(message.from_user.id))
-        print("DEBUG caption ok")
     except Exception as e:
-        print("DEBUG caption error:", e)
-        caption = "ERROR in start_2"
+        print(f"DEBUG caption format error: {e}")
+        caption = str(_["start_2"])
 
-    try:
-        await message.reply_photo(
-            photo=config.START_IMG_URL,
-            caption=caption,
-            reply_markup=InlineKeyboardMarkup(private_panel(_)),
-        )
-        print("DEBUG reply ok")
-    except Exception as e:
-        print("DEBUG reply_photo error:", e)
-
-    #_ = await get_lang(message.chat.id)
-     # ✅ FIX: Make sure _ is always a dict
+    # ---- Safety for language map ----
     if not isinstance(_, dict):
         _ = {}
-        
+
     user_id = message.from_user.id
     current_time = time()
 
-    # Anti-spam check
+    # ---- Anti-spam ----
     last_message_time = user_last_message_time.get(user_id, 0)
     if current_time - last_message_time < SPAM_WINDOW_SECONDS:
         user_last_message_time[user_id] = current_time
@@ -86,7 +71,7 @@ async def start_pm(client, message: Message,_):
 
     await add_served_user(message.from_user.id)
 
-    # Handle special start params
+    # ---- Handle special params (/start help /start inf etc.) ----
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
 
@@ -105,7 +90,10 @@ async def start_pm(client, message: Message,_):
             if await is_on_off(2):
                 await app.send_message(
                     chat_id=config.LOGGER_ID,
-                    text=f"{message.from_user.mention} checked sudo list.\n\n<b>User ID:</b> <code>{message.from_user.id}</code>",
+                    text=(
+                        f"{message.from_user.mention} checked sudo list.\n\n"
+                        f"<b>User ID:</b> <code>{message.from_user.id}</code>"
+                    ),
                 )
             return
 
@@ -115,6 +103,7 @@ async def start_pm(client, message: Message,_):
             query = (str(name)).replace("info_", "", 1)
             query = f"https://www.youtube.com/watch?v={query}"
             results = VideosSearch(query, limit=1)
+
             for result in (await results.next())["result"]:
                 title = result["title"]
                 duration = result["duration"]
@@ -128,66 +117,88 @@ async def start_pm(client, message: Message,_):
             searched_text = _["start_6"].format(
                 title, duration, views, published, channellink, channel, app.mention
             )
+
             key = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="💕 𝐕𖽹𖽴𖽞𖽙 🦋", callback_data=f"downloadvideo {query}"),
-                        InlineKeyboardButton(text="💕 𝐀𖽪𖽴𖽹𖽙 🦋", callback_data=f"downloadaudio {query}"),
+                        InlineKeyboardButton(
+                            text="💕 𝐕𖽹𖽴𖽞𖽙 🦋",
+                            callback_data=f"downloadvideo {query}",
+                        ),
+                        InlineKeyboardButton(
+                            text="💕 𝐀𖽪𖽴𖽹𖽙 🦋",
+                            callback_data=f"downloadaudio {query}",
+                        ),
                     ],
-                    [InlineKeyboardButton(text="🎧 sᴇᴇ ᴏɴ ʏᴏᴜᴛᴜʙᴇ 🎧", url=link)],
+                    [
+                        InlineKeyboardButton(
+                            text="🎧 sᴇᴇ ᴏɴ ʏᴏᴜᴛᴜʙᴇ 🎧", url=link
+                        ),
+                    ],
                 ]
             )
+
             await m.delete()
             await app.send_photo(
-                chat_id=message.chat.id, photo=thumbnail, caption=searched_text, reply_markup=key
+                chat_id=message.chat.id,
+                photo=thumbnail,
+                caption=searched_text,
+                reply_markup=key,
             )
             return
 
-    # ===== NORMAL /START WITH ANIMATIONS =====
-    else:
-        try:
-            out = private_panel(_)
+    # ===== NORMAL /START FLOW (animations then message) =====
+    try:
+        out = private_panel(_)
 
-            # Step 1: Greet with random emoji
-            loading_1 = await message.reply_text(random.choice(GREET))
-            await asyncio.sleep(1)
-            await loading_1.delete()
+        # Step 1: Greet
+        loading_1 = await message.reply_text(random.choice(GREET))
+        await asyncio.sleep(1.2)
+        await loading_1.delete()
 
-            # Step 2: Ding Dong animation
-            vip = await message.reply_text("**ᴅιиg ᴅσиg ꨄ︎❣️.....**")
-            for dots in [".❣️....", "..❣️...", "...❣️..", "....❣️.", ".....❣️"]:
-                await vip.edit_text(f"**ᴅιиg ᴅσиg ꨄ︎{dots}**")
-            await asyncio.sleep(0.5)
-            await vip.delete()
+        # Step 2: Ding Dong
+        vip = await message.reply_text("**ᴅιиg ᴅσиg ꨄ︎❣️.....**")
+        for dots in [".❣️....", "..❣️...", "...❣️..", "....❣️.", ".....❣️"]:
+            await asyncio.sleep(0.3)
+            await vip.edit_text(f"**ᴅιиg ᴅσиg ꨄ︎{dots}**")
+        await asyncio.sleep(0.5)
+        await vip.delete()
 
-            # Step 3: Starting animation
-            vips = await message.reply_text("**⚡ѕ**")
-            steps = ["⚡ѕт", "⚡ѕтα", "⚡ѕтαя", "⚡ѕтαят", "⚡ѕтαятι", "⚡ѕтαятιи", "⚡ѕтαятιиg"]
-            for step in steps:
-                await vips.edit_text(f"**{step}**")
-                await asyncio.sleep(0.1)
-            for _ in range(2):
-                await vips.edit_text("**⚡ѕтαятιиg....**")
-                await asyncio.sleep(0.2)
-                await vips.edit_text("**⚡ѕтαятιиg.**")
-                await asyncio.sleep(0.2)
-            await vips.delete()
+        # Step 3: “Starting...” animation
+        vips = await message.reply_text("**⚡ѕ**")
+        steps = [
+            "⚡ѕт", "⚡ѕтα", "⚡ѕтαя", "⚡ѕтαят",
+            "⚡ѕтαятι", "⚡ѕтαятιи", "⚡ѕтαятιиg"
+        ]
+        for step in steps:
+            await vips.edit_text(f"**{step}**")
+            await asyncio.sleep(0.12)
+        for _ in range(2):
+            await vips.edit_text("**⚡ѕтαятιиg....**")
+            await asyncio.sleep(0.25)
+            await vips.edit_text("**⚡ѕтαятιиg.**")
+            await asyncio.sleep(0.25)
+        await vips.delete()
 
-            # Step 4: Normal start panel
-            await message.reply_photo(
-                photo=config.START_IMG_URL,
-                caption=_["start_2"].format(str(message.from_user.id)),#.format(message.from_user.mention, app.mention),
-                reply_markup=InlineKeyboardMarkup(out),
+        # ✅ Step 4: Show main start photo after animation completes
+        await message.reply_photo(
+            photo=config.START_IMG_URL,
+            caption=caption,
+            reply_markup=InlineKeyboardMarkup(out),
+        )
+
+        if await is_on_off(2):
+            await app.send_message(
+                chat_id=config.LOGGER_ID,
+                text=(
+                    f"{message.from_user.mention} started the bot.\n\n"
+                    f"<b>ID:</b> <code>{message.from_user.id}</code>"
+                ),
             )
 
-            if await is_on_off(2):
-                await app.send_message(
-                    chat_id=config.LOGGER_ID,
-                    text=f"{message.from_user.mention} started the bot.\n\n<b>ID:</b> <code>{message.from_user.id}</code>",
-                )
+    except Exception as e:
+        print(f"[START Error] {e}")
 
-        except Exception as e:
-            print(e)
 
 
 # ===================== /start in groups =====================
