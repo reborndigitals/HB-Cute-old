@@ -8,7 +8,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 AUTO_GCASTS = f"{AUTO_GCAST}" if AUTO_GCAST else False
 
-START_IMG_URLS = "https://graph.org/file/ffdb1be822436121cf5fd.png"
+START_IMG_URLS = "https://telegra.ph/file/e5aaa494015bccbe1ec85.jpg"
 
 MESSAGES = f""
 
