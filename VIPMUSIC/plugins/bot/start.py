@@ -40,7 +40,7 @@ SPAM_WINDOW_SECONDS = 5
 @LanguageStart
 async def start_pm(client, message: Message,_):
     _ = await get_lang(message.chat.id)
-     ✅ FIX: Make sure _ is always a dict
+     # ✅ FIX: Make sure _ is always a dict
     if not isinstance(_, dict):
         _ = {}
         
