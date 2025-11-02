@@ -115,11 +115,7 @@ async def start_pm(client, message: Message, _):
             await app.send_photo(
                 chat_id=message.chat.id, photo=thumbnail, caption=searched_text, reply_markup=key
             )
-            if await is_on_off(2):
-                return await app.send_message(
-                    chat_id=config.LOGGER_ID,
-                    text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>ᴛʀᴀᴄᴋ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
-                )
+            return
 
     # ===== NORMAL /START WITH ANIMATIONS =====
     else:
@@ -157,6 +153,12 @@ async def start_pm(client, message: Message, _):
                 caption=_["start_1"].format(message.from_user.mention, app.mention),
                 reply_markup=InlineKeyboardMarkup(out),
             )
+
+            if await is_on_off(2):
+                await app.send_message(
+                    chat_id=config.LOGGER_ID,
+                    text=f"{message.from_user.mention} started the bot.\n\n<b>ID:</b> <code>{message.from_user.id}</code>",
+                )
 
         except Exception as e:
             print(e)
