@@ -39,7 +39,27 @@ SPAM_WINDOW_SECONDS = 5
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message,_):
-    print("DEBUG types:", type(_), type(_["start_1"]) if isinstance(_, dict) and "start_1" in _ else "no key")
+    print("DEBUG _ type:", type(_))
+    print("DEBUG start_2 type:", type(_["start_2"]) if isinstance(_, dict) and "start_2" in _ else "no key")
+    print("DEBUG start_2 value:", _["start_2"][:100] if isinstance(_, dict) and "start_2" in _ else "missing key")
+
+    try:
+        caption = _["start_2"].format(str(message.from_user.id))
+        print("DEBUG caption ok")
+    except Exception as e:
+        print("DEBUG caption error:", e)
+        caption = "ERROR in start_2"
+
+    try:
+        await message.reply_photo(
+            photo=config.START_IMG_URL,
+            caption=caption,
+            reply_markup=InlineKeyboardMarkup(private_panel(_)),
+        )
+        print("DEBUG reply ok")
+    except Exception as e:
+        print("DEBUG reply_photo error:", e)
+
     #_ = await get_lang(message.chat.id)
      # ✅ FIX: Make sure _ is always a dict
     if not isinstance(_, dict):
