@@ -9,7 +9,6 @@ from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 import config
-from config import BANNED_USERS, GREET, MENTION_USERNAMES, START_REACTIONS, YUMI_PICS
 from VIPMUSIC import app
 from VIPMUSIC.misc import _boot_
 from VIPMUSIC.utils import bot_up_time
@@ -25,6 +24,7 @@ from VIPMUSIC.utils.database import (
 from VIPMUSIC.utils.decorators.language import LanguageStart
 from VIPMUSIC.utils.formatters import get_readable_time
 from VIPMUSIC.utils.inline import first_page, private_panel, start_panel
+from config import BANNED_USERS
 from strings import get_string
 from VIPMUSIC.utils.database import get_assistant
 from time import time
@@ -264,14 +264,3 @@ async def welcome(client, message: Message):
                 await message.stop_propagation()
         except Exception as ex:
             print(ex)
-
-#Reactions for tag bot usernames
-@app.on_message(filters.text & ~BANNED_USERS)
-async def react_on_mentions(client, message: Message):
-    text = message.text.lower()
-    if any(name.lower() in text for name in MENTION_USERNAMES):
-        try:
-            emoji = random.choice(START_REACTIONS)
-            await message.react(emoji)
-        except Exception:
-            pass
