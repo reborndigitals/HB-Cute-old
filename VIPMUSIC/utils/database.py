@@ -405,20 +405,31 @@ async def set_playmode(chat_id: int, mode: str):
     )
 
 
-async def get_lang(chat_id: int):
-    from strings import get_string  # ✅ make sure we can access translation maps
-
+async def get_lang(chat_id: int) -> str:
     mode = langm.get(chat_id)
     if not mode:
         lang = await langdb.find_one({"chat_id": chat_id})
         if not lang:
             langm[chat_id] = "en"
-            # ✅ Return full language dict instead of just "en"
-            return get_string("en")
+            return "en"
         langm[chat_id] = lang["lang"]
-        return get_string(lang["lang"])
-    # ✅ Always return the proper dictionary
-    return get_string(mode)
+        return lang["lang"]
+    return mode
+
+#async def get_lang(chat_id: int):
+  #  from strings import get_string  # ✅ make sure we can access translation maps
+
+  #  mode = langm.get(chat_id)
+   # if not mode:
+      #  lang = await langdb.find_one({"chat_id": chat_id})
+       # if not lang:
+         #   langm[chat_id] = "en"
+           # # ✅ Return full language dict instead of just "en"
+        #    return get_string("en")
+      #  langm[chat_id] = lang["lang"]
+      #  return get_string(lang["lang"])
+   # # ✅ Always return the proper dictionary
+  #  return get_string(mode)
 
 
 async def set_lang(chat_id: int, lang: str):
