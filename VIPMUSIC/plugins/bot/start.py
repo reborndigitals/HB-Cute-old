@@ -165,11 +165,11 @@ async def start_pm(client, message: Message, _):
                reply_markup=InlineKeyboardMarkup(out),
             )
 
-            if await is_on_off(2):
-                await app.send_message(
-                    chat_id=config.LOGGER_ID,
-                    text=f"{message.from_user.mention} started the bot.\n\n<b>ID:</b> <code>{message.from_user.id}</code>",
-                )
+        if await is_on_off(2):
+               await app.send_message(
+               chat_id=config.LOGGER_ID,
+               text=f"{message.from_user.mention} started the bot.\n\n<b>ID:</b> <code>{message.from_user.id}</code>",
+        )
 
         except Exception as e:
             print(e)
