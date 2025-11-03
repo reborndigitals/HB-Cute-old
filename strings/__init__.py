@@ -8,15 +8,18 @@ languages_present = {}
 
 
 def get_string(lang: str):
-    # ✅ If someone passes a number instead of a string, use English as fallback
-    if not isinstance(lang, str):
-        lang = "en"
-
-    # ✅ If the language key is missing, use English too
-    if lang not in languages:
-        lang = "en"
-
     return languages[lang]
+
+#def get_string(lang: str):
+   # # ✅ If someone passes a number instead of a string, use English as fallback
+   # if not isinstance(lang, str):
+      #  lang = "en"
+
+   # # ✅ If the language key is missing, use English too
+ #   if lang not in languages:
+    #    lang = "en"
+
+ #   return languages[lang]
 
 
 for filename in os.listdir(r"./strings/langs/"):
