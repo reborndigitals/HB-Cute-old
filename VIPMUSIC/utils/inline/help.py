@@ -20,7 +20,7 @@ def first_page(_):
 
 
 def second_page(_):
-	controll_button = [InlineKeyboardButton(text="💕 𝐁𖽖𖽝ᴋ 🦋", callback_data=f"settings_back_helper")]
+	controll_button = [InlineKeyboardButton(text="💕 𝐁꘍𖽝ᴋ 🦋", callback_data=f"settings_back_helper")]
 	second_page_menu = InlineKeyboardMarkup(
 		[
 			[InlineKeyboardButton(text=_["H_B_7"], callback_data="help_callback hb7"), InlineKeyboardButton(text=_["H_B_19"], callback_data="help_callback hb19"),InlineKeyboardButton(text=_["H_B_14"], callback_data="help_callback hb14")],
@@ -59,17 +59,17 @@ def help_pannel(_, START: Union[bool, int] = None):
                 ),
             
                 InlineKeyboardButton(
-                    text="💕 𝐁𖽖𖽝ᴋ 🦋",
+                    text="💕 𝐁꘍𖽝ᴋ 🦋",
                     callback_data="help_callback hb3",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="💕 𝐆𖽝𖽖𖾗𖾓 🦋",
+                    text="💕 𝐆𖽝꘍𖾗𖾓 🦋",
                     callback_data="help_callback hb4",
                 ),
                 InlineKeyboardButton(
-                    text="💕 𝐆 𖽜𖽖𖽡🦋",
+                    text="💕 𝐆 𖽜꘍𖽡🦋",
                     callback_data="help_callback hb12",
                 ),
                 InlineKeyboardButton(
@@ -79,18 +79,18 @@ def help_pannel(_, START: Union[bool, int] = None):
             ],
             [
                 InlineKeyboardButton(
-                    text="💕 𝐏𖾘𖽖ʏ𖾘𖽹𖾗𖾓 🦋",
+                    text="💕 𝐏𖾘꘍ʏ𖾘𖽹𖾗𖾓 🦋",
                     callback_data="help_callback hb6",
                 ),
                 InlineKeyboardButton(
-                    text="💕 𝐕𖽙𖽹𖽝𖽞 - 𝐂𝚑𖽖𖾓 🦋",
+                    text="💕 𝐕𖽙𖽹𖽝𖽞𝐂𖽻꘍𖾓 🦋",
                     callback_data="help_callback hb10",
                 ),
             ],
             [
            
                 InlineKeyboardButton(
-                    text="💕 𝐏𖾘𖽖ʏ 🦋",
+                    text="💕 𝐏𖾘꘍ʏ 🦋",
                     callback_data="help_callback hb8",
                 ),
             
@@ -102,7 +102,7 @@ def help_pannel(_, START: Union[bool, int] = None):
             ],
             [
                 InlineKeyboardButton(
-                    text="💕 𝐒𖾓𖽖𖽷𖾓 🦋",
+                    text="💕 𝐒𖾓꘍𖽷𖾓 🦋",
                     callback_data="help_callback hb11",
                 ),
             ],
