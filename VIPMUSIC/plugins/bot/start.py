@@ -29,8 +29,10 @@ from VIPMUSIC.utils.extraction import extract_user
 from strings import get_string
 
 # 🚫 Anti-spam system
+# Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
 user_command_count = {}
+# Define the threshold for command spamming (e.g., 20 commands within 60 seconds)
 SPAM_THRESHOLD = 2
 SPAM_WINDOW_SECONDS = 5
 
