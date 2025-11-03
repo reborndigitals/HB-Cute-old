@@ -60,7 +60,7 @@ def UserbotWrapper(command):
                     return await message.reply_text(
                         _["call_2"].format(
                             app.mention, userbot.id, userbot.name, userbot.username
-                        ), reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text= "💕 𝐔𖽡𖽜𖽖𖽡 𝐀𖾗𖾗𖽹𖾗𖾓𖽖𖽡𖾓  🦋", callback_data=f"unban_assistant")]])
+                        ), reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text= "💕 𝐔𖽡𖽜꘍𖽡  𝐀𖾗𖾗𖽹𖾗𖾓꘍𖽡𖾓  🦋", callback_data=f"unban_assistant")]])
                     )
             except UserNotParticipant:
                 if message.chat.username:
