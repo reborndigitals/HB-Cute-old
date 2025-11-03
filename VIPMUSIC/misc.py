@@ -5,6 +5,7 @@ import heroku3
 from pyrogram import filters
 
 import config
+import config SUDOERS
 from VIPMUSIC.core.mongo import mongodb
 
 from .logging import LOGGER
