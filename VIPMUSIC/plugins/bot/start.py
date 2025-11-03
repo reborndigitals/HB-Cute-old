@@ -156,13 +156,13 @@ async def start_pm(client, message: Message, _):
         await asyncio.sleep(0.2)
         await vips.edit_text("**⚡ѕтαятιиg.**")
         await asyncio.sleep(0.2)
-    await vips.delete()
+        await vips.delete()
 
-            # Step 4: Normal start panel
-            await message.reply_photo(
-                photo=config.START_IMG_URL,
-                caption=_["start_1"].format(message.from_user.mention, app.mention),
-                reply_markup=InlineKeyboardMarkup(out),
+        # Step 4: Normal start panel
+        await message.reply_photo(
+               photo=config.START_IMG_URL,
+               caption=_["start_1"].format(message.from_user.mention, app.mention),
+               reply_markup=InlineKeyboardMarkup(out),
             )
 
             if await is_on_off(2):
