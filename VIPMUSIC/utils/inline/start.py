@@ -11,9 +11,9 @@ def start_panel(_):
             ),
         ],
         [
-            InlineKeyboardButton(text="💕 𝐇𖽞𖾘𖽳 🦋", callback_data="settings_back_helper"),
+            InlineKeyboardButton(text="💕  𝐇𖾔𖾘𖽳 🦋", callback_data="settings_back_helper"),
             InlineKeyboardButton(
-                text="💕 𝐒𖽞𖾓 🦋", callback_data="settings_helper"
+                text="💕 𝐒𖾔𖾓 🦋", callback_data="settings_helper"
             ),
         ],
         [
@@ -27,16 +27,16 @@ def private_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="💕 𝐂𖾘𖽹𖽝ᴋ 𝐇𖽞𖽖𖾖 𝐓𖽙 𝐀𖽴𖽴 𝐌𖽞 🦋",
+                text="💕 𝐊𖽹𖽴𖽡꘍𖽳 𝐌𖽞  🦋",
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
         [
             InlineKeyboardButton(text="💕 𝐆𖽷𖽙𖽪𖽳 🦋", url=config.SUPPORT_CHAT),
-            InlineKeyboardButton(text="💕 𝐌𖽙𖽷𖽞 🦋", url=config.SUPPORT_CHANNEL),
+            InlineKeyboardButton(text="💕 𝐌𖽙𖽷𖾔 🦋", url=config.SUPPORT_CHANNEL),
         ],
         [
-            InlineKeyboardButton(text="💕 𝐅𖽞𖽖𖾓𖽪𖽷𖽞𖾗 🦋", callback_data="settings_back_helper")
+            InlineKeyboardButton(text="💕 𝐅𖾔꘍𖾓𖽪𖾖𖾔𖾗 🦋", callback_data="settings_back_helper")
         ],
     ]
     return buttons
