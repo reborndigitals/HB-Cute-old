@@ -30,12 +30,12 @@ def speed_markup(_, chat_id):
                     callback_data=f"SpeedUP {chat_id}|2.0",
                 ),
             ],
-            [
-                InlineKeyboardButton(
-                    text=_["CLOSE_BUTTON"],
-                    callback_data="close",
-                ),
-            ],
+            #[
+             #   InlineKeyboardButton(
+              #      text=_["CLOSE_BUTTON"],
+               #     callback_data="close",
+             #   ),
+          #  ],
         ]
     )
     return upl
