@@ -44,19 +44,30 @@ def languageCB(mystic):
     return wrapper
 
 
-def LanguageStart(func):
-    async def wrapper(client, message):
+#def LanguageStart(func):
+   # async def wrapper(client, message):
 
+    #    try:
+          #  lang = await get_lang(message.chat.id)
+         #   # ✅ Safety fallback
+           # if not isinstance(lang, str):
+            #    lang = "en"
+
+          #  _ = get_string(lang)
+      #  except Exception as e:
+         #   print(f"[LanguageStart Error] {e}")
+        #    _ = get_string("en")
+
+      #  return await func(client, message, _)
+ #   return wrapper
+
+def LanguageStart(mystic):
+    async def wrapper(_, message, **kwargs):
         try:
-            lang = await get_lang(message.chat.id)
-            # ✅ Safety fallback
-            if not isinstance(lang, str):
-                lang = "en"
+            language = await get_lang(message.chat.id)
+            language = get_string(language)
+        except:
+            language = get_string("en")
+        return await mystic(_, message, language)
 
-            _ = get_string(lang)
-        except Exception as e:
-            print(f"[LanguageStart Error] {e}")
-            _ = get_string("en")
-
-        return await func(client, message, _)
     return wrapper
