@@ -53,7 +53,7 @@ SHAYRI = [ "ɪᴄʜɪ ᴛʜᴀ ɪᴛᴄʜɪᴛʜᴀ.. ᴇɴ ᴋɴɴᴀᴛʜᴜʟ
           "ᴊɪʟʟᴜ ᴊɪʟʟᴜ ᴊɪɢᴀʀᴜᴅᴀɴᴅᴀ ᴋɪᴛᴛᴀᴠᴀᴅɪ 🙈 ᴜɴɴᴀ ᴀᴘᴘᴅɪʏᴇ ꜱᴀᴘᴘɪᴅᴜᴠᴇɴ ɢᴇᴛᴛʜᴀ ᴛʜᴀᴀɴᴅɪ 🥳", ]
 
 # Command
-SHAYRI_COMMAND = ["lifeline", "lovebeats", "heartbeat"]
+SHAYRI_COMMAND = ["pickupline", "uruttu", "urutu", "pickup"]
 
 @app.on_message(
     filters.command(SHAYRI_COMMAND)
