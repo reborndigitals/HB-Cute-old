@@ -5,7 +5,10 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from VIPMUSIC import app
 
 def first_page(_):
-	controll_button = [InlineKeyboardButton(text="💕 𝐌𖽞𖽡𖽪 🦋", callback_data=f"settingsback_helper"), InlineKeyboardButton(text="💕 𝐍𖽞𝅃𖾓 🦋", callback_data=f"dilXaditi")]
+	controll_button = [
+		InlineKeyboardButton(text="💕 𝐌𖾔𖽡𖽪 🦋", callback_data=f"settingsback_helper"),
+		InlineKeyboardButton(text="💕 𝐍𖾔𝅃𖾓 🦋", callback_data=f"dilXaditi")
+	]
 	first_page_menu = InlineKeyboardMarkup(
 		[
 			[
