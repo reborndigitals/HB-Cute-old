@@ -21,7 +21,7 @@ AUTO_SHUTDOWN_TIMEOUT = 600  # 10 minutes
 
 
 async def init():
-    """Initialize all components."""
+    """Initialize the bot and load all modules."""
     if (
         not config.STRING1
         and not config.STRING2
@@ -33,8 +33,10 @@ async def init():
             "❌ Pyrogram string session not filled. Please set STRING1–STRING5!"
         )
 
+    # Load sudo users
     await sudo()
 
+    # Load banned users
     try:
         gbanned_users = await get_gbanned()
         for user_id in gbanned_users:
@@ -46,7 +48,7 @@ async def init():
     except Exception as e:
         LOGGER(__name__).warning(f"Failed to load banned users: {e}")
 
-    # Start clients
+    # Start all clients
     await app.start()
     for module in ALL_MODULES:
         importlib.import_module("VIPMUSIC.plugins" + module)
@@ -60,7 +62,7 @@ async def init():
         "╔═════ஜ۩۞۩ஜ════╗\n  ♨️ 𝗠𝗔𝗗𝗘 𝗕𝗬 𝗩𝗜𝗣 𝗕𝗢𝗬 ♨️\n╚═════ஜ۩۞۩ஜ════╝"
     )
 
-    # Run idle and auto-shutdown together
+    # Run idle and auto-shutdown concurrently
     await asyncio.gather(idle(), auto_shutdown())
 
 
@@ -79,13 +81,30 @@ async def auto_shutdown():
 async def shutdown():
     """Gracefully stop all services."""
     LOGGER("VIPMUSIC").info("🧹 Cleaning up before shutdown...")
+
     try:
-        await VIP.stop()
+        # Safely stop voice chat if active
+        try:
+            if hasattr(VIP, "leave_call"):
+                await VIP.leave_call()
+            elif hasattr(VIP, "stop_stream"):
+                await VIP.stop_stream()
+        except NoActiveGroupCall:
+            LOGGER("VIPMUSIC").info("🎵 No active group call to stop.")
+        except Exception as e:
+            LOGGER("VIPMUSIC").warning(f"Could not stop group call: {e}")
+
+        # Stop all clients
         await app.stop()
         await userbot.stop()
         await telethn.disconnect()
+
     except Exception as e:
         LOGGER("VIPMUSIC").error(f"Error during shutdown: {e}")
+    finally:
+        LOGGER("VIPMUSIC").info(
+            "✅ Shutdown complete.\n╔═════ஜ۩۞۩ஜ════╗\n  ♨️ 𝗠𝗔𝗗𝗘 𝗕𝗬 𝗩𝗜𝗣 𝗕𝗢𝗬 ♨️\n╚═════ஜ۩۞۩ஜ════╝"
+        )
 
 
 async def restart_bot():
@@ -93,14 +112,14 @@ async def restart_bot():
     await shutdown()
     LOGGER("VIPMUSIC").info("🔁 Restarting bot...")
     python = sys.executable
-    os.execv(python, [python] + sys.argv)  # restarts the same script
+    os.execv(python, [python] + sys.argv)  # restart the current script
 
 
 if __name__ == "__main__":
     telethn.start(bot_token=config.BOT_TOKEN)
     loop = asyncio.get_event_loop()
 
-    # Graceful signal handlers (Ctrl+C etc.)
+    # Graceful signal handlers (Ctrl+C, kill, etc.)
     for sig in (signal.SIGINT, signal.SIGTERM):
         loop.add_signal_handler(sig, lambda: asyncio.ensure_future(shutdown()))
 
