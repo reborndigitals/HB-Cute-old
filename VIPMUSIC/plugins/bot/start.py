@@ -24,7 +24,7 @@ from VIPMUSIC.utils.database import (
 from VIPMUSIC.utils.decorators.language import LanguageStart
 from VIPMUSIC.utils.formatters import get_readable_time
 from VIPMUSIC.utils.inline import first_page, private_panel, start_panel
-from config import BANNED_USERS
+from config import BANNED_USERS, MENTION_USERNAMES, START_REACTIONS
 from strings import get_string
 from VIPMUSIC.utils.database import get_assistant
 from time import time
