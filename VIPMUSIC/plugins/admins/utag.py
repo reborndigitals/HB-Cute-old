@@ -35,16 +35,16 @@ async def tag_all_users(_, message):
                 if m.user.is_bot:
                     continue
                 usernum+= 1
-                usertxt += f"\n⊚ [{m.user.first_name}](tg://user?id={m.user.id})\n"
-                if usernum == 5:
-                    await app.send_message(message.chat.id, f'{text}\n{usertxt}\n\n|| ➥ ᴏғғ ᴛᴀɢɢɪɴɢ ʙʏ » /stoputag ||')
+                usertxt += f"[{m.user.first_name}](tg://user?id={m.user.id})"
+                if usernum == 1:
+                    await app.send_message(message.chat.id, f'<blockquote>{text}</blockquote>\n<blockquote>✰ | {usertxt}</blockquote>')
                     usernum = 0
                     usertxt = ""
-                    await asyncio.sleep(7)
+                    await asyncio.sleep(4)
         except Exception as e:
             print(e)
 
-@app.on_message(filters.command(["stoputag", "stopuall", "offutag", "offuall", "utagoff", "ualloff"], prefixes=["/", ".", "@", "#"]) & admin_filter)
+@app.on_message(filters.command(["stop", "cancel", "stoputag", "stopuall", "offutag", "offuall", "utagoff", "ualloff"], prefixes=["/", ".", "@", "#"]) & admin_filter)
 async def stop_tagging(_, message):
     global SPAM_CHATS
     chat_id = message.chat.id
