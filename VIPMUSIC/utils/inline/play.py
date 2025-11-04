@@ -756,21 +756,21 @@ def panel_markup_5(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="💕 𝐏𖾘꘍ʏ𖾘𖽹𖾗𖾓 🦋",
+                text="⌯ 𝐏𖾘꘍ʏ𖾘𖽹𖾗𖾓 ⌯",
                 callback_data=f"vip_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text="💕 𝐂𖽙𖽡𖾓𖾖𖽙𖾘𖾗 🦋",
+                text="⌯ 𝐂𖽙𖽡𖾓𖾖𖽙𖾘𖾗 ⌯",
                 callback_data=f"Pages Back|3|{videoid}|{chat_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="💕 𝐕𖽹𖽴𖽞𖽙 🦋",
+                text="⌯ 𝐕𖽹𖽴𖽞𖽙 ⌯",
                 callback_data=f"downloadvideo {videoid}",
             ),
             InlineKeyboardButton(
-                text="💕 𝐀𖽪𖽴𖽹𖽙 🦋",
+                text="⌯ 𝐀𖽪𖽴𖽹𖽙 ⌯",
                 callback_data=f"downloadaudio {videoid}",
             ),
         ],
