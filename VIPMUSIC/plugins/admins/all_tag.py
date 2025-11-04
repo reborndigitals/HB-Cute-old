@@ -25,8 +25,8 @@ async def tag_all_users(_,message):
         async for m in app.get_chat_members(message.chat.id): 
             if message.chat.id not in SPAM_CHATS:
                 break       
-            usernum += 5
-            usertxt += f"\n⊚ [{m.user.first_name}](tg://user?id={m.user.id})\n"
+            usernum += 1
+            usertxt += f"[{m.user.first_name}](tg://user?id={m.user.id})"
             if usernum == 1:
                 await replied.reply_text(usertxt)
                 await asyncio.sleep(2)
@@ -46,9 +46,9 @@ async def tag_all_users(_,message):
             if message.chat.id not in SPAM_CHATS:
                 break 
             usernum += 1
-            usertxt += f"\n⊚ [{m.user.first_name}](tg://user?id={m.user.id})\n"
-            if usernum == 5:
-                await app.send_message(message.chat.id,f'{text}\n{usertxt}\n\n|| ➥ ᴏғғ ᴛᴀɢɢɪɴɢ ʙʏ » /cancel ||')
+            usertxt += f"[{m.user.first_name}](tg://user?id={m.user.id})"
+            if usernum == 1:
+                await app.send_message(message.chat.id,f'<blockquote>{text}</blockquote>\n<blockquote>✰ | {usertxt}</blockquote>')
                 await asyncio.sleep(2)
                 usernum = 0
                 usertxt = ""                          
@@ -57,7 +57,7 @@ async def tag_all_users(_,message):
         except Exception:
             pass        
            
-@app.on_message(filters.command(["stopmention", "offall", "cancel", "allstop", "stopall", "cancelmention", "offmention", "mentionoff", "alloff", "cancelall", "allcancel" ], prefixes=["/", "@", "#", "!"]) & admin_filter)
+@app.on_message(filters.command(["stopmention", "offall", "cancel", "stop", "allstop", "stopall", "cancelmention", "offmention", "mentionoff", "alloff", "cancelall", "allcancel" ], prefixes=["/", "@", "#", "!"]) & admin_filter)
 async def cancelcmd(_, message):
     chat_id = message.chat.id
     if chat_id in SPAM_CHATS:
