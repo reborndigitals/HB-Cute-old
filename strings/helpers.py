@@ -1,320 +1,200 @@
-HELP_1 = """🙄 *<u>🌸𝙰ᴅᴍɪɴ Ƈᴏᴍᴍᴀɴᴅs:</u>*
-
-
-
-☀❥ Ƥᴀᴜsᴇ Ƭʜᴇ Ƥʟᴀʏɪɴɢ ᴍᴜsɪᴄ.
-
-/pause 𝐶 𝑆𝑡𝑎𝑛𝑑𝑠 𝐹𝑜𝑟 𝐶ℎ𝑎𝑛𝑛𝑒𝑙 𝑃𝑙𝑎𝑦
-/resume » ☀︎︎❥︎ Ʀᴇsᴜᴍᴇ Ƭʜᴇ Ƥᴀᴜsᴇᴅ Mᴜsɪᴄ.
-/mute » ☀︎︎❥︎ Mᴜᴛᴇ Ƭʜᴇ Ƥʟᴀʏɪɴɢ Mᴜsɪᴄ.
-/unmute » ☀︎︎❥︎ Ʋɴᴍᴜᴛᴇ Ƭʜᴇ Mᴜᴛᴇᴅ Mᴜsɪᴄ.
-/skip » ☀︎︎❥︎ Ƨᴋɪᴘ Ƭʜᴇ Ƈᴜʀʀᴇɴᴛ Ƥʟᴀʏɪɴɢ Mᴜsɪᴄ.
-/stop » ☀︎︎❥︎ Ƨᴛᴏᴘ Ƭʜᴇ Ƥʟᴀʏɪɴɢ Mᴜsɪᴄ.
-/shuffle » ☀︎︎❥︎ Ʀᴀɴᴅᴏᴍʟʏ Ƨʜᴜғғʟᴇs Ƭʜᴇ Ҩᴜᴇᴜᴇᴅ Ƥʟᴀʏʟɪsᴛ.
-/seek » ☀︎︎❥︎ Ƒᴏʀᴡᴀʀᴅ Ƨᴇᴇᴋ Ƭʜᴇ Mᴜsɪᴄ Ƭᴏ Ƴᴏᴜʀ Ɗᴜʀᴀᴛɪᴏɴ
-/seekback » ☀︎︎❥︎ Ɓᴀᴄᴋᴡᴀʀᴅ Ƨᴇᴇᴋ Ƭʜᴇ Mᴜsɪᴄ Ƭᴏ Ƴᴏᴜʀ Ɗᴜʀᴀᴛɪᴏɴ
-/restart » ☀︎︎❥︎ Ʀᴇsᴛᴀʀᴛ Ɓᴏᴛ Ƒᴏʀ Ƴᴏᴜʀ Ƈʜᴀᴛ .
-
-
-🌸Ƨᴘᴇᴄɪғɪᴄ Ƨᴋɪᴘ:
-/skip » [Ɲᴜᴍʙᴇʀ(Єxᴀᴍᴘʟᴇ: 3)] 
-    -☀︎︎❥︎ Ƨᴋɪᴘs Mᴜsɪᴄ Ƭᴏ ƛ Ƭʜᴇ Ƨᴘᴇᴄɪғɪᴇᴅ Ҩᴜᴇᴜᴇᴅ Ɲᴜᴍʙᴇʀ. Єxᴀᴍᴘʟᴇ: /Ƨᴋɪᴘ 3 Ɯɪʟʟ Ƨᴋɪᴘ Mᴜsɪᴄ Ƭᴏ Ƭʜɪʀᴅ Ҩᴜᴇᴜᴇᴅ Mᴜsɪᴄ ƛɴᴅ Ɯɪʟʟ Ɩɢɴᴏʀᴇ 1 ƛɴᴅ 2 Mᴜsɪᴄ Ɩɴ Ҩᴜᴇᴜᴇ.
-
-🌸Լᴏᴏᴘ Ƥʟᴀʏ:
-/loop » [Єɴᴀʙʟᴇ/Ɗɪsᴀʙʟᴇ] Ơʀ [Ɲᴜᴍʙᴇʀs Ɓᴇᴛᴡᴇᴇɴ 1-10] 
-    -☀︎︎❥︎ Ɯʜᴇɴ ƛᴄᴛɪᴠᴀᴛᴇᴅ, Ɓᴏᴛ Լᴏᴏᴘs Ƭʜᴇ Ƈᴜʀʀᴇɴᴛ Ƥʟᴀʏɪɴɢ Mᴜsɪᴄ Ƭᴏ 1-10 Ƭɪᴍᴇs Ơɴ ѵᴏɪᴄᴇ Ƈʜᴀᴛ. Ɗᴇғᴀᴜʟᴛ Ƭᴏ 10 Ƭɪᴍᴇs.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_2 = """😜 **<u>🌸ƛᴜᴛʜ Ʋsᴇʀs:</u>**
-ƛᴜᴛʜ Ʋsᴇʀs Ƈᴀɴ Ʋsᴇ ƛᴅᴍɪɴ Ƈᴏᴍᴍᴀɴᴅs Ɯɪᴛʜᴏᴜᴛ ƛᴅᴍɪɴ Ʀɪɢʜᴛs Ɩɴ Ƴᴏᴜʀ Ƈʜᴀᴛ.
-
-/auth  [Ʋsᴇʀɴᴀᴍᴇ] » ☀︎︎❥︎ ƛᴅᴅ ƛ Ʋsᴇʀ Ƭᴏ ƛᴜᴛʜ Լɪsᴛ Ơғ Ƭʜᴇ Ɠʀᴏᴜᴘ.
-/unauth [Ʋsᴇʀɴᴀᴍᴇ] » ☀︎︎❥︎ Ʀᴇᴍᴏᴠᴇ ƛ Ʋsᴇʀ Ƒʀᴏᴍ ƛᴜᴛʜ Լɪsᴛ Ơғ Ƭʜᴇ Ɠʀᴏᴜᴘ.
-/authusers » ☀︎︎❥︎ Ƈʜᴇᴄᴋ ƛᴜᴛʜ Լɪsᴛ Ơғ Ƭʜᴇ Ɠʀᴏᴜᴘ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_3 = """<b>ʙʟᴀᴄᴋʟɪsᴛ ғᴇᴀᴛᴜʀᴇ</b> [ᴏɴʟʏ ғᴏʀ sᴜᴅᴏᴇʀs]
-😒 **<u>ʙʟᴀᴄᴋʟɪsᴛ ᴄʜᴀᴛ :</u>**
-
-/blacklistchat [ᴄʜᴀᴛ ɪᴅ] » ʙʟᴀᴄᴋʟɪsᴛ ᴀ ᴄʜᴀᴛ ғʀᴏᴍ ᴜsɪɴɢ ᴛʜᴇ ʙᴏᴛ.
-
-/whitelistchat [ᴄʜᴀᴛ ɪᴅ] » ᴡʜɪᴛᴇʟɪsᴛ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴄʜᴀᴛ.
-
-/blacklistedchat » sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴄʜᴀᴛs.
-
-
-😤 **<u>ʙʟᴏᴄᴋ ᴜsᴇʀs:</u>**
-
-/block [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴄʜᴜᴛɪʏᴀ] » sᴛᴀʀᴛs ɪɢɴᴏʀɪɴɢ ᴛʜᴇ ᴄʜᴜᴛɪʏᴀ, sᴏ ᴛʜᴀᴛ ʜᴇ ᴄᴀɴ'ᴛ ᴜsᴇ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs.
-
-/unblock [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴜsᴇʀ] » ᴜɴʙʟᴏᴄᴋs ᴛʜᴇ ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀ.
-
-/blockedusers » sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀs.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_4 = """🍒 **<u>ʙʀᴏᴀᴅᴄᴀsᴛ ғᴇᴀᴛᴜʀᴇ</u>** [ᴏɴʟʏ ғᴏʀ sᴜᴅᴏᴇʀs] :
-
-/broadcast [ᴍᴇssᴀɢᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ] » ʙʀᴏᴀᴅᴄᴀsᴛ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs ᴏғ ᴛʜᴇ ʙᴏᴛ.
-
-<u>ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ᴍᴏᴅᴇs:</u>
-**-pin** » ᴩɪɴs ʏᴏᴜʀ ʙʀᴏᴀᴅᴄᴀsᴛᴇᴅ ᴍᴇssᴀɢᴇs ɪɴ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs.
-**-pinloud** » ᴩɪɴs ʏᴏᴜʀ ʙʀᴏᴀᴅᴄᴀsᴛᴇᴅ ᴍᴇssᴀɢᴇ ɪɴ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs ᴀɴᴅ sᴇɴᴅ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ᴛᴏ ᴛʜᴇ ᴍᴇᴍʙᴇʀs.
-**-user** » ʙʀᴏᴀᴅᴄᴀsᴛs ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴛᴏ ᴛʜᴇ ᴜsᴇʀs ᴡʜᴏ ʜᴀᴠᴇ sᴛᴀʀᴛᴇᴅ ʏᴏᴜʀ ʙᴏᴛ.
-**-assistant** » ʙʀᴏᴀᴅᴄᴀsᴛ ʏᴏᴜʀ ᴍᴇssᴀɢᴇ ғʀᴏᴍ ᴛʜᴇ ᴀssɪᴛᴀɴᴛ ᴀᴄᴄᴏᴜɴᴛ ᴏғ ᴛʜᴇ ʙᴏᴛ.
-**-nobot** » ғᴏʀᴄᴇs ᴛʜᴇ ʙᴏᴛ ᴛᴏ ɴᴏᴛ ʙʀᴏᴀᴅᴄᴀsᴛ ᴛʜᴇ ᴍᴇssᴀɢᴇ..
-
-**ᴇxᴀᴍᴩʟᴇ:** `/broadcast -user -assistant -pin ᴛᴇsᴛɪɴɢ ʙʀᴏᴀᴅᴄᴀsᴛ`
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_5 = """😉 **<u>ᴇxᴛʀᴀs :</u>**
-
-/loop [ᴅɪsᴀʙʟᴇ/ᴇɴᴀʙʟᴇ] ᴏʀ [ʙᴇᴛᴡᴇᴇɴ 1:10] 
-» ᴡʜᴇɴ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ʙᴏᴛ ᴡɪʟʟ ᴩʟᴀʏ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ ɪɴ ʟᴏᴏᴩ ғᴏʀ 10 ᴛɪᴍᴇs ᴏʀ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴏғ ʀᴇǫᴜᴇsᴛᴇᴅ ʟᴏᴏᴩs.
-
-/shuffle » sʜᴜғғʟᴇ ᴛʜᴇ ǫᴜᴇᴜᴇᴅ ᴛʀᴀᴄᴋs.
-
-/seek » sᴇᴇᴋ ᴛʜᴇ sᴛʀᴇᴀᴍ ᴛᴏ ᴛʜᴇ ɢɪᴠᴇɴ ᴅᴜʀᴀᴛɪᴏɴ.
-
-/seekback » ʙᴀᴄᴋᴡᴀʀᴅ sᴇᴇᴋ ᴛʜᴇ sᴛʀᴇᴀᴍ ᴛᴏ ᴛʜᴇ ᴛʜᴇ ɢɪᴠᴇɴ ᴅᴜʀᴀᴛɪᴏɴ.
-
-/lyrics [sᴏɴɢ ɴᴀᴍᴇ] » sᴇᴀʀᴄʜ ʟʏʀɪᴄs ғᴏʀ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ sᴏɴɢ ᴀɴᴅ sᴇɴᴅ ᴛʜᴇ ʀᴇsᴜʟᴛs.
-
-/uruttu , /love , /pickup  𝑈𝑟𝑢𝑡𝑡𝑖𝑘𝑜 𝑀𝑎𝑚𝑒𝑎..
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_6 = """🌸**<u>Ɓᴏᴛ's Ƨᴇʀᴠᴇʀ Ƥʟᴀʏʟɪsᴛs:</u>**
-
-/playlist » ☀︎︎❥︎ Ƈʜᴇᴄᴋ Ƴᴏᴜʀ Ƨᴀᴠᴇᴅ Ƥʟᴀʏʟɪsᴛ Ơɴ Ƨᴇʀᴠᴇʀs.
-
-/deleteplaylist » ☀︎︎❥︎ Ɗᴇʟᴇᴛᴇ ƛɴʏ Ƨᴀᴠᴇᴅ Mᴜsɪᴄ Ɩɴ Ƴᴏᴜʀ Ƥʟᴀʏʟɪsᴛ
-
-/play » ☀︎︎❥︎ Ƨᴛᴀʀᴛ Ƥʟᴀʏɪɴɢ Ƴᴏᴜʀ Ƨᴀᴠᴇᴅ Ƥʟᴀʏʟɪsᴛ Ƒʀᴏᴍ Ƨᴇʀᴠᴇʀs.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_7 = """⚡**Ƥɪɴɢ 𝙲𝚘ᴍᴍᴀɴᴅ𝚜 :**
-
-/ping » ☀︎︎❥︎ Ƥɪɴɢ Ƭʜᴇ Ɓᴏᴛ ƛɴᴅ Ƈʜᴇᴄᴋ Ʀᴀᴍ, Ƈᴘᴜ Єᴛᴄ Ƨᴛᴀᴛs Ơғ Ɓᴏᴛ.
-
-/stats » ☀︎︎❥︎ Ɠᴇᴛ Ƭᴏᴘ 10 Ƭʀᴀᴄᴋs Ɠʟᴏʙᴀʟ Ƨᴛᴀᴛs, Ƭᴏᴘ 10 Ʋsᴇʀs Ơғ Ɓᴏᴛ, Ƭᴏᴘ 10 Ƈʜᴀᴛs Ơɴ Ɓᴏᴛ, Ƭᴏᴘ 10 Ƥʟᴀʏᴇᴅ Ɩɴ ᴀ Ƈʜᴀᴛ Єᴛᴄ Єᴛᴄ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_8 = """🌸**<u>Ƥʟᴀʏ Ƈᴏᴍᴍᴀɴᴅs:</u>**
-
-ƛᴠᴀɪʟᴀʙʟᴇ Ƈᴏᴍᴍᴀɴᴅs = Ƥʟᴀʏ , ᐯᴘʟᴀʏ , Ƥʟᴀʏ
-
-Ƒᴏʀᴄᴇᴘʟᴀʏ Ƈᴏᴍᴍᴀɴᴅs = Ƥʟᴀʏғᴏʀᴄᴇ , 𝗏Ƥʟᴀʏғᴏʀᴄᴇ , Ƈᴘʟᴀʏғᴏʀᴄᴇ
-
-**ᴄ** Ƨᴛᴀɴᴅs Ƒᴏʀ Ƈʜᴀɴɴᴇʟ Ƥʟᴀʏ.
-**ᴠ** Ƨᴛᴀɴᴅs Ƒᴏʀ 𝖵ɪᴅᴇᴏ Ƥʟᴀʏ.
-Ƒᴏʀᴄᴇ Ƨᴛᴀɴᴅs Ƒᴏʀ Ƒᴏʀᴄᴇ Ƥʟᴀʏ.
-
-/play  Ơʀ /vplay  Ơʀ /cplay » ☀︎︎❥︎ Ɓᴏᴛ Ɯɪʟʟ Ƨᴛᴀʀᴛ Ƥʟᴀʏɪɴɢ Ƴᴏᴜʀ Ɠɪᴠᴇɴ Ҩᴜᴇʀʏ Ơɴ ѵᴏɪᴄᴇ Ƈʜᴀᴛ Ơʀ Ƨᴛʀᴇᴀᴍ Լɪᴠᴇ Լɪɴᴋs Ơɴ Ꮙᴏɪᴄᴇ Ƈʜᴀᴛs.
-
-/playforce  ᴏʀ /vplayforce  ᴏʀ /cplayforce » ☀︎︎❥︎  Ƒᴏʀᴄᴇ Ƥʟᴀʏ Ƨᴛᴏᴘs Ƭʜᴇ Ƈᴜʀʀᴇɴᴛ Ƥʟᴀʏɪɴɢ Ƭʀᴀᴄᴋ Ơɴ Ꮙᴏɪᴄᴇ Ƈʜᴀᴛ ƛɴᴅ Ƨᴛᴀʀᴛs Ƥʟᴀʏɪɴɢ Ƭʜᴇ Ƨᴇᴀʀᴄʜᴇᴅ Ƭʀᴀᴄᴋ Ɩɴsᴛᴀɴᴛʟʏ Ɯɪᴛʜᴏᴜᴛ Ɗɪsᴛᴜʀʙɪɴɢ/Ƈʟᴇᴀʀɪɴɢ Ҩᴜᴇᴜᴇ.
-
-/channelplay  [Ƈʜᴀᴛ Ʋsᴇʀɴᴀᴍᴇ Ơʀ Ɩᴅ] Ơʀ [Ɗɪsᴀʙʟᴇ] » ☀︎︎❥︎ Ƈᴏɴɴᴇᴄᴛ Ƈʜᴀɴɴᴇʟ Ƭᴏ ƛ Ɠʀᴏᴜᴘ ƛɴᴅ Ƨᴛʀᴇᴀᴍ Mᴜsɪᴄ Ơɴ Ƈʜᴀɴɴᴇʟ's Ꮙᴏɪᴄᴇ Ƈʜᴀᴛ Ƒʀᴏᴍ Ƴᴏᴜʀ Ɠʀᴏᴜᴘ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ]((https://t.me/HeartBeat_Muzic)"""
-
-HELP_9 = """🥀 **<u>sᴜᴅᴏᴇʀs ᴀɴᴅ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅs :</u>**
-
-🥶 **<u>ʜᴇʀᴏᴋᴜ :</u>**
-
-/usage » sʜᴏᴡs ᴛʜᴇ ᴅʏɴᴏ ᴜsᴀɢᴇ ᴏғ ᴛʜᴇ ᴍᴏɴᴛʜ.
-
-🤓 **<u>ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs:</u>**
-
-/restart » ʀᴇsᴛᴀʀᴛs ʏᴏᴜʀ ʙᴏᴛ.
-
-/update » ᴜᴩᴅᴀᴛᴇs ᴛʜᴇ ʙᴏᴛ ғʀᴏᴍ ᴛʜᴇ ᴜᴩsᴛʀᴇᴀᴍ ʀᴇᴩᴏ.
-
-/speedtest » ᴄʜᴇᴄᴋ ʙᴏᴛ's sᴇʀᴠᴇʀ sᴩᴇᴇᴅ.
-
-/maintenance [ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ] » ᴇɴᴀʙʟᴇ ᴏʀ ᴅɪsᴀʙʟᴇ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ᴍᴏᴅᴇ ᴏғ ʏᴏᴜʀ ʙᴏᴛ.
-
-/logger [ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ] » ʙᴏᴛ ᴡɪʟʟ sᴛᴀʀᴛ ʟᴏɢɢɪɴɢ ᴛʜᴇ ᴀᴄᴛɪᴠɪᴛɪᴇs ʜᴀᴩᴩᴇɴ ᴏɴ ʙᴏᴛ.
-
-/get_log [ɴᴜᴍʙᴇʀ ᴏғ ʟɪɴᴇs] » ɢᴇᴛ ʟᴏɢs ᴏғ ʏᴏᴜʀ ʙᴏᴛ [ᴅᴇғᴀᴜʟᴛ ᴠᴀʟᴜᴇ ɪs 100 ʟɪɴᴇs]
-
-💔 **<u>ғᴏʀ ᴩʀɪᴠᴀᴛᴇ ʙᴏᴛ ᴏɴʟʏ :</u>**
-
-/authorize [ᴄʜᴀᴛ ɪᴅ] » ᴀʟʟᴏᴡs ᴀ ᴄʜᴀᴛ ғᴏʀ ᴜsɪɴɢ ᴛʜᴇ ʙᴏᴛ.
-/unauthorize [ᴄʜᴀᴛ ɪᴅ] » ᴅɪsᴀʟʟᴏᴡs ᴛʜᴇ ᴀʟʟᴏᴡᴇᴅ ᴄʜᴀᴛ.
-/authorized » sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀʟʟᴏᴡᴇᴅ ᴄʜᴀᴛs.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_10 = """🤑 **<u>ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛs :</u>**
-
-/activevoice » sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇᴄʜᴀᴛs ᴏɴ ᴛʜᴇ ʙᴏᴛ.
-/activevideo » sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛs ᴏɴ ʙᴏᴛ.
-/autoend [ᴇɴᴀʙʟᴇ|ᴅɪsᴀʙʟᴇ] » ᴇɴᴀʙʟᴇ sᴛʀᴇᴀᴍ ᴀᴜᴛᴏ ᴇɴᴅ ɪғ ɴᴏ ᴏɴᴇ ɪs ʟɪsᴛᴇɴɪɴɢ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_11 = """😅**<u>ɢᴇᴛ sᴛᴀʀᴛᴇᴅ ᴡɪᴛʜ ʙᴏᴛ</u>**
-
-/start » sᴛᴀʀᴛs ᴛʜᴇ ᴍᴜsɪᴄ ʙᴏᴛ.
-
-/help » ɢᴇᴛ ʜᴇʟᴩ ᴍᴇɴᴜ ᴡɪᴛʜ ᴇxᴩʟᴀɴᴀᴛɪᴏɴ ᴏғ ᴄᴏᴍᴍᴀɴᴅs.
-
-/reboot » ʀᴇʙᴏᴏᴛs ᴛʜᴇ ʙᴏᴛ ғᴏʀ ʏᴏᴜʀ ᴄʜᴀᴛ.
-
-/settings » sʜᴏᴡs ᴛʜᴇ ɢʀᴏᴜᴩ sᴇᴛᴛɪɴɢs ᴡɪᴛʜ ᴀɴ ɪɴᴛᴇʀᴀᴄᴛɪᴠᴇ ɪɴʟɪɴᴇ ᴍᴇɴᴜ.
-
-/sudolist » sʜᴏᴡs ᴛʜᴇ sᴜᴅᴏ ᴜsᴇʀs ᴏғ ᴍᴜsɪᴄ ʙᴏᴛ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_12 = """🤬 **<u>ɢʙᴀɴ ғᴇᴀᴛᴜʀᴇ</u>** [ᴏɴʟʏ ғᴏʀ sᴜᴅᴏᴇʀs] :
-
-/gban [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴄʜᴜᴛɪʏᴀ] » ɢʟᴏʙᴀʟʟʏ ʙᴀɴs ᴛʜᴇ ᴄʜᴜᴛɪʏᴀ ғʀᴏᴍ ᴀʟʟ ᴛʜᴇ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs ᴀɴᴅ ʙʟᴀᴄᴋʟɪsᴛ ʜɪᴍ ғʀᴏᴍ ᴜsɪɴɢ ᴛʜᴇ ʙᴏᴛ.
-
-/ungban [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴜsᴇʀ] » ɢʟᴏʙᴀʟʟʏ ᴜɴʙᴀɴs ᴛʜᴇ ɢʟᴏʙᴀʟʟʏ ʙᴀɴɴᴇᴅ ᴜsᴇʀ.
-
-/gbannedusers » sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ɢʟᴏʙᴀʟʟʏ ʙᴀɴɴᴇʀ ᴜsᴇʀs.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_13 = """🦋 **<u>ᴍᴏʀᴇ ᴄᴜᴛᴇ ғᴇᴀᴛᴜʀᴇs 🦋</u>** 
-
-/tagall , /utag , /ftag » ᴛᴀɢ ᴀʟʟ ᴍᴇᴍʙᴇʀs ᴏɴᴇ ʙʏ ᴏɴᴇ ғᴏʀ ᴠᴄ.
-
-/vctag , /stopvctag » sᴛᴀʀᴛ ᴛᴀɢɢɪɴɢ ғᴏʀ ᴠᴄ ᴏɴᴇ ʙʏ ᴏɴᴇ.
-
-/bin [your cc bins no.] » ᴄʜᴇᴄᴋ ʙɪɴ ᴀᴄᴛɪᴠᴇ ᴏʀ ɴᴏᴛ.
-
-/repo » ᴛᴏ ɢᴇᴛ ᴛʜᴇ ʙᴏᴛ ʀᴇᴘᴏ.
-
-/owner » ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ʙᴏᴛ ᴏᴡɴᴇʀ.
-
-◈ ᴍᴏʀᴇ ғᴇᴀᴛᴜʀᴇs ᴄᴏᴍᴍɪɴɢ sᴏᴏɴ ◈ 
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_14 = """
-<b><u>sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ</b></u>
-
-/song [sᴏɴɢ ɴᴀᴍᴇ/ʏᴛ ᴜʀʟ] : ᴅᴏᴡɴʟᴏᴀᴅ ᴀɴʏ ᴛʀᴀᴄᴋ ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ ɪɴ ᴍᴘ3 ᴏʀ ᴍᴘ4 ғᴏʀᴍᴀᴛs.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_15 = """
-<b><u>sᴘᴇᴇᴅ ᴄᴏᴍᴍᴀɴᴅs :</b></u>
-
-ʏᴏᴜ ᴄᴀɴ ᴄᴏɴᴛʀᴏʟ ᴛʜᴇ ᴘʟᴀʏʙᴀᴄᴋ sᴘᴇᴇᴅ ᴏғ ᴛʜᴇ ᴏɴɢᴏɪɴɢ sᴛʀᴇᴀᴍ. [ᴀᴅᴍɪɴs ᴏɴʟʏ]
-
-/speed or /playback : ғᴏʀ ᴀᴅᴊᴜsᴛɪɴɢ ᴛʜᴇ ᴀᴜᴅɪᴏ ᴘʟᴀʏʙᴀᴄᴋ sᴘᴇᴇᴅ ɪɴ ɢʀᴏᴜᴘ.
-/cspeed or /cplayback : ғᴏʀ ᴀᴅᴊᴜsᴛɪɴɢ ᴛʜᴇ ᴀᴜᴅɪᴏ ᴘʟᴀʏʙᴀᴄᴋ sᴘᴇᴇᴅ ɪɴ ᴄʜᴀɴɴᴇʟ.
-
-<b><u>sᴇᴇᴋ sᴛʀᴇᴀᴍ :</b></u>
-
-/seek [ᴅᴜʀᴀᴛɪᴏɴ ɪɴ sᴇᴄᴏɴᴅs] : sᴇᴇᴋ ᴛʜᴇ sᴛʀᴇᴀᴍ ᴛᴏ ᴛʜᴇ ɢɪᴠᴇɴ ᴅᴜʀᴀᴛɪᴏɴ.
-/seekback [ᴅᴜʀᴀᴛɪᴏɴ ɪɴ sᴇᴄᴏɴᴅs] : ʙᴀᴄᴋᴡᴀʀᴅ sᴇᴇᴋ ᴛʜᴇ sᴛʀᴇᴀᴍ ᴛᴏ ᴛʜᴇ ᴛʜᴇ ɢɪᴠᴇɴ ᴅᴜʀᴀᴛɪᴏɴ.
-
-<b><u>sʜᴜғғʟᴇ ᴏ̨ᴜᴇᴜᴇ :</b></u>
-
-/shuffle : sʜᴜғғʟᴇ's ᴛʜᴇ ᴏ̨ᴜᴇᴜᴇ.
-/queue : sʜᴏᴡs ᴛʜᴇ sʜᴜғғʟᴇᴅ ᴏ̨ᴜᴇᴜᴇ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_16 = """
-<b><u>Aᴄᴛɪᴏɴ :</b></u>
-» ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ꜰᴏʀ Bᴀɴs & Mᴜᴛᴇ :
-
- ❍ /kickme: kicks the user who issued the command
-
-Admins only:
- ❍ /ban <userhandle>: bans a user. (via handle, or reply)
- ❍ /sban <userhandle>: Silently ban a user. Deletes command, Replied message and doesn't reply. (via handle, or reply)
- ❍ /tban <userhandle> x(m/h/d): bans a user for x time. (via handle, or reply). m = minutes, h = hours, d = days.
- ❍ /unban <userhandle>: unbans a user. (via handle, or reply)
- ❍ /kick <userhandle>: kicks a user out of the group, (via handle, or reply)
- ❍ /mute <userhandle>: silences a user. Can also be used as a reply, muting the replied to user.
- ❍ /tmute <userhandle> x(m/h/d): mutes a user for x time. (via handle, or reply). m = minutes, h = hours, d = days.
- ❍ /unmute <userhandle>: unmutes a user. Can also be used as a reply, muting the replied to user.
-__
-𝐒ᴘᴇᴄɪᴀʟ 𝐂ᴏᴍᴍᴀɴᴅs 𝐒ᴜᴘᴘᴏʀᴛ 𝐀ʟʟ 𝐄xᴀᴍᴘʟᴇ  - 𝚈𝚞𝚖𝚒 𝚋𝚊𝚗 𝚈𝚞𝚖𝚒 𝚖𝚞𝚝𝚎 𝚈𝚞𝚖𝚒 𝚙𝚛𝚘𝚖𝚘𝚝𝚎 ..... 𝚎𝚝𝚌
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_17 = """
-<b><u>sᴛɪᴄᴋᴇʀs :</b></u>
-
-/packkang ➠ ᴄʀᴇᴀᴛᴇs ᴀ ᴘᴀᴄᴋ ᴏғ sᴛɪᴄᴋᴇʀs ғʀᴏᴍ ᴀ ᴏᴛʜᴇʀ ᴘᴀᴄᴋ.
-/stickerid ➠ ɢᴇᴛs ᴛʜᴇ sᴛɪᴄᴋᴇʀ ɪᴅ ᴏғ ᴀ sᴛɪᴄᴋᴇʀ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_18 = """
-<b><u>𝑃𝑖𝑐𝑘 𝑈𝑝 𝐿𝑖𝑛𝑒 :</b></u>
-
-/pickup , /uruttu ,/love » 𝑈𝑟𝑢𝑡𝑡𝑖𝑘𝑜 𝑀𝑎𝑚𝑒𝑎..
-
-/gali » ɢᴇᴛ sᴏᴍᴇ ɢᴀʟɪ sᴇɴᴛᴇɴᴄᴇs ғᴏʀ ᴀʙᴜsᴇ ᴀɴʏᴏᴊᴇ [ʙᴏᴛ ᴘᴍ]
-
-/vcraid » ᴄᴏᴍᴍɪɴɢ sᴏᴏɴ.
- 
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_19 = """
-<b><u>Iɴꜰᴏ :</b></u>
-
-/id : ɢᴇᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ɢʀᴏᴜᴘ ɪᴅ. ɪғ ᴜsᴇᴅ ʙʏ ʀᴇᴘʟʏɪɴɢ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ, ɢᴇᴛs ᴛʜᴀᴛ ᴜsᴇʀ's ɪᴅ.
-/info : ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴜsᴇʀ.
-/github <ᴜsᴇʀɴᴀᴍᴇ> : ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ɢɪᴛʜᴜʙ ᴜsᴇʀ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_20 = """
-<b><u>Gʀᴏᴜᴘ :</b></u>
-ᴛʜᴇsᴇ ᴀʀᴇ ᴛʜᴇ ᴀᴠᴀɪʟᴀʙʟᴇ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ᴄᴏᴍᴍᴀɴᴅs:
-
-⦿ /pin ➠ ᴘɪɴs ᴀ ᴍᴇssᴀɢᴇ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /pinned ➠ ᴅɪsᴘʟᴀʏs ᴛʜᴇ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /unpin ➠ ᴜɴᴘɪɴs ᴛʜᴇ ᴄᴜʀʀᴇɴᴛʟʏ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ.
-⦿ /staff ➠ ᴅɪsᴘʟᴀʏs ᴛʜᴇ ʟɪsᴛ ᴏғ sᴛᴀғғ ᴍᴇᴍʙᴇʀs.
-⦿ /bots ➠ ᴅɪsᴘʟᴀʏs ᴛʜᴇ ʟɪsᴛ ᴏғ ʙᴏᴛs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /settitle ➠ sᴇᴛs ᴛʜᴇ ᴛɪᴛʟᴇ ᴏғ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /setdiscription ➠ sᴇᴛs ᴛʜᴇ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ᴏғ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /setphoto ➠ sᴇᴛs ᴛʜᴇ ɢʀᴏᴜᴘ ᴘʜᴏᴛᴏ.
-⦿ /removephoto ➠ ʀᴇᴍᴏᴠᴇs ᴛʜᴇ ɢʀᴏᴜᴘ ᴘʜᴏᴛᴏ.
-⦿ /zombies ➠ ʀᴇᴍᴏᴠᴇs ᴀᴄᴄ ᴅᴇʟᴇᴛᴇᴅ ᴍᴇᴍʙᴇʀs ғʀᴏᴍ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /imposter ᴏɴ/ᴏғғ ➠ ᴛᴜʀɴs ᴏɴ ᴏʀ ᴏғғ ᴛʜᴇ ᴡᴀᴛᴄʜᴇʀ ғᴏʀ ʏᴏᴜʀ ɢʀᴏᴜᴘ, ᴡʜɪᴄʜ ɴᴏᴛɪғɪᴇs ᴀʙᴏᴜᴛ ᴜsᴇʀs ᴡʜᴏ ᴄʜᴀɴɢᴇ ᴛʜᴇɪʀ ɴᴀᴍᴇ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_21 = """
-<b><u>Exᴛʀᴀ :</b></u>
-
-⦿ /math ➠ sᴏʟᴠᴇs ᴍᴀᴛʜᴇᴍᴀᴛɪᴄᴀʟ ᴘʀᴏʙʟᴇᴍs ᴀɴᴅ ᴇǫᴜᴀᴛɪᴏɴs.
-⦿ /blackpink ➠ ɢᴇɴᴇʀᴀᴛᴇs ᴀ ʙʟᴀᴄᴋᴘɪɴᴋ-sᴛʏʟᴇ ʟᴏɢᴏ.
-⦿ /carbon ➠ ɢᴇɴᴇʀᴀᴛᴇs ᴀ ᴄᴀʀʙᴏɴ ᴄᴏᴅᴇ ɪᴍᴀɢᴇ ғʀᴏᴍ ᴀ ᴄᴏᴅᴇ sɴɪᴘᴘᴇᴛ.
-⦿ /speedtest ➠ ᴍᴇᴀsᴜʀᴇs ᴛʜᴇ ɪɴᴛᴇʀɴᴇᴛ sᴘᴇᴇᴅ.
-⦿ /reverse ➠ ʀᴇᴠᴇʀsᴇs ᴀ ɢɪᴠᴇɴ ᴛᴇxᴛ.
-⦿ /webss ➠ ᴛᴀᴋᴇs ᴀ sᴄʀᴇᴇɴsʜᴏᴛ ᴏғ ᴀ ᴡᴇʙsɪᴛᴇ.
-⦿ /paste ➠ ᴜᴘʟᴏᴀᴅs ᴀ ᴛᴇxᴛ sɴɪᴘᴘᴇᴛ ᴛᴏ ᴛʜᴇ ᴄʟᴏᴜᴅ ᴀɴᴅ ɢɪᴠᴇs ᴀ ʟɪɴᴋ.
-⦿ /tgm ➠ ᴜᴘʟᴏᴀᴅs ᴀ ᴘʜᴏᴛᴏ (ᴜɴᴅᴇʀ 𝟻ᴍʙ) ᴛᴏ ᴛʜᴇ ᴄʟᴏᴜᴅ ᴀɴᴅ ɢɪᴠᴇs ᴀ ʟɪɴᴋ.
-⦿ /tr ➠ ᴛʀᴀɴsʟᴀᴛᴇs ᴛᴇxᴛ.
-⦿ /google ➠ sᴇᴀʀᴄʜᴇs ғᴏʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴏɴ ɢᴏᴏɢʟᴇ.
-⦿ /stack ➠ sᴇᴀʀᴄʜᴇs ғᴏʀ ᴘʀᴏɢʀᴀᴍᴍɪɴɢ-ʀᴇʟᴀᴛᴇᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴏɴ sᴛᴀᴄᴋ ᴏᴠᴇʀғʟᴏᴡ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
-
-HELP_22 = """
-<b><u>Iᴍᴀɢᴇ :</b></u>
-ᴛʜᴇsᴇ ᴀʀᴇ ᴛʜᴇ ᴀᴠᴀɪʟᴀʙʟᴇ ɪᴍᴀɢᴇ ᴄᴏᴍᴍᴀɴᴅs:
-
-⦿ /draw ➠ ɢᴇɴᴇʀᴀᴛᴇs ᴀ ᴅʀᴀᴡɪɴɢ ʙᴀsᴇᴅ ᴏɴ ᴀ ɢɪᴠᴇɴ ᴘᴏʀᴏᴍᴘᴛ.
-⦿ /image ➠ sᴇᴀʀᴄʜᴇs ғᴏʀ ᴀɴ ɪᴍᴀɢᴇ ʙᴀsᴇᴅ ᴏɴ ᴀ ɢɪᴠᴇɴ ᴋᴇʏᴡᴏʀᴅ.
-⦿ /upscale ➠ ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ ᴛᴏ ᴜᴘsᴄᴀʟᴇ ɪᴛ ᴀɴᴅ ɪᴍᴘʀᴏᴠᴇ ɪᴛs ǫᴜᴀʟɪᴛʏ.
-
-💕 𝐏𖽙𖽮𖽞𖽷𖽞𖽴 𝐁ʏ 🦋 [𝞖𝘌𝘈𝘙𝘛𝂬♡𝂬𝞑𝘌𝘈𝘛▹ᴴᴮ⸳⸳ⷮ⸳⸳ⷨ](https://t.me/HeartBeat_Muzic)"""
+HELP_1 = """<blockquote>💫 **🌸 ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /pause » ᴘᴀᴜꜱᴇꜱ ᴛʜᴇ 🎵 ᴍᴜꜱɪᴄ  
+🔻 /resume » ʀᴇꜱᴜᴍᴇꜱ ᴛʜᴇ 🎶 ꜱᴛʀᴇᴀᴍ  
+🔻 /mute » ᴍᴜᴛᴇꜱ 🔇 ᴛʜᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ  
+🔻 /unmute » ᴜɴᴍᴜᴛᴇꜱ 🔊 ᴛʜᴇ ᴘʟᴀʏʙᴀᴄᴋ  
+🔻 /skip » ᴊᴜᴍᴘꜱ ᴛᴏ ⏭️ ɴᴇxᴛ ᴛʀᴀᴄᴋ  
+🔻 /stop » ꜱᴛᴏᴘꜱ ᴀʟʟ 🔥 ᴠɪʙᴇꜱ  
+🔻 /shuffle » ꜱʜᴜꜰꜰʟᴇꜱ ᴛʜᴇ 🎧 ǫᴜᴇᴜᴇ  
+🔻 /restart » ʀᴇʙᴏᴏᴛꜱ ♻️ ʙᴏᴛ ꜰᴏʀ ʏᴏᴜʀ ᴄʜᴀᴛ</blockquote>
+<blockquote>🌸 **ꜱᴘᴇᴄɪꜰɪᴄ ꜱᴋɪᴘ:**</blockquote>
+<blockquote>🔻 /skip [ɴᴜᴍʙᴇʀ] » ꜱᴋɪᴘꜱ ᴛᴏ 🎯 ᴘʀᴇᴄɪꜱᴇ ꜱᴏɴɢ</blockquote>
+<blockquote>🌸 **ʟᴏᴏᴘ ᴘʟᴀʏ:**  
+🔻 /loop [1-10] » ʟᴏᴏᴘꜱ 🔁 ᴄᴜʀʀᴇɴᴛ ꜱᴏɴɢ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_2 = """<blockquote>💫 **🎵 ᴘʟᴀʏ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /play » ꜱᴛᴀʀᴛꜱ ᴘʟᴀʏɪɴɢ ᴀ 🎶 ꜱᴏɴɢ  
+🔻 /vplay » ꜱᴛʀᴇᴀᴍꜱ ᴀ 🎥 ᴠɪᴅᴇᴏ  
+🔻 /playforce » ꜰᴏʀᴄᴇ ᴘʟᴀʏꜱ 🔂 ɴᴇᴡ ᴛʀᴀᴄᴋ  
+🔻 /channelplay » ꜱᴛʀᴇᴀᴍꜱ ɪɴ ʏᴏᴜʀ 📺 ᴄʜᴀɴɴᴇʟ  
+🔻 /play [ʀᴇᴘʟʏ] » ᴘʟᴀʏꜱ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ 🎵 ᴍᴇᴅɪᴀ  
+🔻 /play [ʟɪɴᴋ/ɴᴀᴍᴇ] » ꜱᴇᴀʀᴄʜᴇꜱ & ᴘʟᴀʏꜱ ᴀ ᴛʀᴀᴄᴋ  
+🔻 /queue » ꜱʜᴏᴡꜱ ᴛʜᴇ 📜 ǫᴜᴇᴜᴇᴅ ꜱᴏɴɢꜱ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_3 = """<blockquote>💫 **💠 ʙᴏᴛ ɪɴꜰᴏ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /start » ᴄʜᴇᴄᴋ ʙᴏᴛ 🤖 ʀᴇꜱᴘᴏɴꜱᴇ  
+🔻 /help » ᴅɪꜱᴘʟᴀʏꜱ ᴀʟʟ 📚 ʜᴇʟᴘ ᴘᴀɢᴇꜱ  
+🔻 /ping » ꜱʜᴏᴡꜱ ʙᴏᴛ 📶 ʟᴀᴛᴇɴᴄʏ  
+🔻 /stats » ᴠɪᴇᴡꜱ 📊 ᴜꜱᴀɢᴇ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ  
+🔻 /uptime » ꜱʜᴏᴡꜱ ʙᴏᴛ ⏱️ ᴜᴘᴛɪᴍᴇ  
+🔻 /id » ɢᴇᴛꜱ ᴜꜱᴇʀ/ᴄʜᴀᴛ 🆔</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_4 = """<blockquote>💫 **🎧 ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /song [ɴᴀᴍᴇ] » ᴅᴏᴡɴʟᴏᴀᴅꜱ 🎶 ꜱᴏɴɢꜱ  
+🔻 /vsong [ɴᴀᴍᴇ] » ᴅᴏᴡɴʟᴏᴀᴅꜱ 🎥 ᴠɪᴅᴇᴏꜱ  
+🔻 /lyrics [ɴᴀᴍᴇ] » ꜰɪɴᴅꜱ ʟʏʀɪᴄꜱ 📝 ꜰᴏʀ ᴀ ꜱᴏɴɢ  
+🔻 /download [ʀᴇᴘʟʏ] » ᴅᴏᴡɴʟᴏᴀᴅꜱ ᴀᴜᴅɪᴏ/ᴠɪᴅᴇᴏ 🔽</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_5 = """<blockquote>💫 **🎼 ᴘʟᴀʏʟɪꜱᴛ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /playlist » ꜱʜᴏᴡꜱ ʏᴏᴜʀ 🎵 ᴘʟᴀʏʟɪꜱᴛ  
+🔻 /addplay » ᴀᴅᴅꜱ ᴀ ꜱᴏɴɢ ➕ ᴛᴏ ʏᴏᴜʀ ʟɪꜱᴛ  
+🔻 /delplay » ʀᴇᴍᴏᴠᴇꜱ ❌ ᴀ ꜱᴏɴɢ  
+🔻 /playplaylist » ᴘʟᴀʏꜱ ᴇɴᴛɪʀᴇ 🎶 ᴘʟᴀʏʟɪꜱᴛ  
+🔻 /clearplaylist » ᴅᴇʟᴇᴛᴇꜱ 🗑️ ᴀʟʟ ꜱᴏɴɢꜱ ɪɴ ʟɪꜱᴛ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_6 = """<blockquote>💫 **⚙️ ꜱᴇᴛᴛɪɴɢꜱ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /settings » ᴏᴘᴇɴꜱ ⚙️ ʙᴏᴛ ꜱᴇᴛᴛɪɴɢꜱ  
+🔻 /setquality » ᴄʜᴀɴɢᴇꜱ 🎧 ᴀᴜᴅɪᴏ/ᴠɪᴅᴇᴏ ǫᴜᴀʟɪᴛʏ  
+🔻 /setadmin » ᴍᴀɴᴀɢᴇꜱ 👮 ᴀᴅᴍɪɴ ᴘᴇʀᴍɪꜱꜱɪᴏɴꜱ  
+🔻 /setduration » ʟɪᴍɪᴛꜱ ⏰ ᴍᴀx ᴘʟᴀʏ ᴛɪᴍᴇ  
+🔻 /setclean » ᴛᴜʀɴꜱ 🧹 ᴄʟᴇᴀɴ ᴍᴏᴅᴇ ᴏɴ/ᴏꜰꜰ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_7 = """<blockquote>💫 **📡 ᴘɪɴɢ / ᴀʟɪᴠᴇ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /ping » ꜱʜᴏᴡꜱ 📶 ʙᴏᴛ ʀᴇꜱᴘᴏɴꜱᴇ ᴛɪᴍᴇ  
+🔻 /alive » ᴄʜᴇᴄᴋꜱ 💖 ʙᴏᴛ ʜᴇᴀʟᴛʜ  
+🔻 /uptime » ᴅɪꜱᴘʟᴀʏꜱ ⏱️ ʜᴏᴡ ʟᴏɴɢ ʙᴏᴛ ʜᴀꜱ ʙᴇᴇɴ ʀᴜɴɴɪɴɢ  
+🔻 /sysinfo » ɢɪᴠᴇꜱ ⚙️ ʙᴏᴛ ꜱʏꜱᴛᴇᴍ ᴅᴇᴛᴀɪʟꜱ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_8 = """<blockquote>💫 **👑 ꜱᴜᴅᴏ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /logs » ꜱʜᴏᴡꜱ 🗂️ ʀᴇᴄᴇɴᴛ ʟᴏɢꜱ  
+🔻 /update » ᴜᴘᴅᴀᴛᴇꜱ 🔄 ʙᴏᴛ ꜱᴏᴜʀᴄᴇꜱ  
+🔻 /restart » ʀᴇʙᴏᴏᴛꜱ ♻️ ᴛʜᴇ ʙᴏᴛ  
+🔻 /clean » ʀᴇᴍᴏᴠᴇꜱ 🧹 ᴄᴀᴄʜᴇ  
+🔻 /leaveall » ʙᴏᴛ ʟᴇᴀᴠᴇꜱ 👋 ᴀʟʟ ɢʀᴏᴜᴘꜱ  
+🔻 /addsudo » ᴀᴅᴅꜱ ➕ ɴᴇᴡ ꜱᴜᴅᴏ ᴜꜱᴇʀ  
+🔻 /delsudo » ʀᴇᴍᴏᴠᴇꜱ ❌ ꜱᴜᴅᴏ ᴜꜱᴇʀ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_9 = """<blockquote>💫 **📢 ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /broadcast [ᴍᴇꜱꜱᴀɢᴇ] » ꜱᴇɴᴅꜱ 📨 ᴛᴏ ᴀʟʟ ᴄʜᴀᴛꜱ  
+🔻 /gcast [ᴍᴇꜱꜱᴀɢᴇ] » ɢʟᴏʙᴀʟ 🌍 ʙʀᴏᴀᴅᴄᴀꜱᴛ  
+🔻 /stats » ᴠɪᴇᴡꜱ 📊 ᴛᴏᴛᴀʟ ʀᴇᴀᴄʜ  
+🔻 /users » ꜱʜᴏᴡꜱ 👥 ᴜꜱᴇʀ ᴄᴏᴜɴᴛ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_10 = """<blockquote>💫 **☁️ ʜᴇʀᴏᴋᴜ ᴛᴏᴏʟꜱ:**</blockquote>
+<blockquote>🔻 /usage » ꜱʜᴏᴡꜱ 📊 ʜᴇʀᴏᴋᴜ ᴅʏɴᴏ ᴜꜱᴀɢᴇ  
+🔻 /logs » ɢᴇᴛꜱ 📜 ʜᴇʀᴏᴋᴜ ʟᴏɢꜱ  
+🔻 /setvar » ᴀᴅᴅꜱ ⚙️ ɴᴇᴡ ᴄᴏɴꜰɪɢ ᴠᴀʀ  
+🔻 /delvar » ʀᴇᴍᴏᴠᴇꜱ ❌ ᴀ ᴄᴏɴꜰɪɢ  
+🔻 /getvar » ꜱʜᴏᴡꜱ 🔍 ᴄᴜʀʀᴇɴᴛ ᴠᴀʀꜱ  
+🔻 /restart » ʀᴇʙᴏᴏᴛꜱ 🔁 ʜᴇʀᴏᴋᴜ ᴀᴘᴘ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_11 = """<blockquote>💫 **🧹 ᴄʟᴇᴀɴ ᴍᴏᴅᴇ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /cleanmode » ᴛᴏɢɢʟᴇꜱ 🧼 ᴄʟᴇᴀɴ ᴍᴏᴅᴇ  
+🔻 /cleandb » ᴅᴇʟᴇᴛᴇꜱ 🗑️ ᴏʟᴅ ᴅᴀᴛᴀ ᴇɴᴛʀɪᴇꜱ  
+🔻 /clean » ʀᴇᴍᴏᴠᴇꜱ 🧹 ʙᴏᴛ ᴍᴇꜱꜱᴀɢᴇꜱ ɪɴ ᴄʜᴀᴛ  
+🔻 /clearall » ᴄʟᴇᴀʀꜱ ❌ ᴀʟʟ ᴛᴇᴍᴘ ꜱᴛᴏʀᴇᴅ ꜰɪʟᴇꜱ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_12 = """<blockquote>💫 **🔁 ʟᴏᴏᴘ / ꜱᴇᴇᴋ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /loop [1-10] » ʀᴇᴘᴇᴀᴛꜱ 🔂 ᴄᴜʀʀᴇɴᴛ ꜱᴏɴɢ  
+🔻 /seek [ᴛɪᴍᴇ] » ꜰᴀꜱᴛꜰᴏʀᴡᴀʀᴅꜱ ⏩ ᴛʀᴀᴄᴋ  
+🔻 /seekback [ᴛɪᴍᴇ] » ʀᴇᴡɪɴᴅꜱ ⏪ ᴀ ꜱᴏɴɢ  
+🔻 /shuffle » ᴍɪxᴇꜱ 🎶 ᴛʜᴇ ǫᴜᴇᴜᴇ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_13 = """<blockquote>💫 **🎙️ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴛᴏᴏʟꜱ:**</blockquote>
+<blockquote>🔻 /join » ᴊᴏɪɴꜱ 🎤 ᴠᴏɪᴄᴇ ᴄʜᴀᴛ  
+🔻 /leave » ʟᴇᴀᴠᴇꜱ 👋 ᴠᴄ  
+🔻 /stopvc » ꜱᴛᴏᴘꜱ 🔇 ᴀʟʟ ᴀᴜᴅɪᴏ  
+🔻 /mute » ᴍᴜᴛᴇꜱ 🔕 ʙᴏᴛ ɪɴ ᴠᴄ  
+🔻 /unmute » ᴜɴᴍᴜᴛᴇꜱ 🔊 ʙᴏᴛ  
+🔻 /vctitle [ɴᴀᴍᴇ] » ᴄʜᴀɴɢᴇꜱ 🏷️ ᴠᴄ ᴛɪᴛʟᴇ  
+🔻 /vclist » ꜱʜᴏᴡꜱ ᴀʟʟ 🎧 ᴠᴄ ꜱᴇꜱꜱɪᴏɴꜱ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_14 = """<blockquote>💫 **📝 ʟʏʀɪᴄꜱ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /lyrics [ꜱᴏɴɢ ɴᴀᴍᴇ] » ꜰɪɴᴅꜱ ʟʏʀɪᴄꜱ 📜  
+🔻 /lyrics en [ꜱᴏɴɢ] » ᴇɴɢʟɪꜱʜ 🇬🇧 ʟʏʀɪᴄꜱ  
+🔻 /lyrics hi [ꜱᴏɴɢ] » ʜɪɴᴅɪ 🇮🇳 ʟʏʀɪᴄꜱ  
+🔻 /lyrics rom [ꜱᴏɴɢ] » ʀᴏᴍᴀɴɪᴄ 💞 ᴠᴇʀꜱɪᴏɴ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_15 = """<blockquote>💫 **🎶 ᴘʟᴀʏʟɪꜱᴛ ᴄᴏɴᴛʀᴏʟꜱ:**</blockquote>
+<blockquote>🔻 /addsong [ɴᴀᴍᴇ] » ᴀᴅᴅꜱ ➕ ꜱᴏɴɢ ᴛᴏ ʟɪꜱᴛ  
+🔻 /delsong [ɴᴀᴍᴇ] » ʀᴇᴍᴏᴠᴇꜱ ❌ ꜱᴏɴɢ  
+🔻 /clearlist » ᴄʟᴇᴀʀꜱ 🗑️ ᴀʟʟ ᴇɴᴛʀɪᴇꜱ  
+🔻 /viewlist » ꜱʜᴏᴡꜱ 👀 ᴄᴜʀʀᴇɴᴛ ᴘʟᴀʏʟɪꜱᴛ  
+🔻 /playplist » ᴘʟᴀʏꜱ 🎧 ᴘʀᴇꜱᴇᴛ ʟɪꜱᴛ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_16 = """<blockquote>💫 **🚫 ɢʟᴏʙᴀʟ ʙᴀɴ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /gban [ᴜꜱᴇʀ] » ʙᴀɴꜱ 🔨 ᴜꜱᴇʀ ꜰʀᴏᴍ ᴀʟʟ ᴄʜᴀᴛꜱ  
+🔻 /ungban [ᴜꜱᴇʀ] » ᴜɴʙᴀɴꜱ ✅ ᴜꜱᴇʀ  
+🔻 /gbanlist » ꜱʜᴏᴡꜱ 📜 ᴀʟʟ ɢʙᴀɴɴᴇᴅ ᴜꜱᴇʀꜱ  
+🔻 /gbaninfo [ɪᴅ] » ɢᴇᴛꜱ ℹ️ ᴅᴇᴛᴀɪʟꜱ ᴏꜰ ʙᴀɴɴᴇᴅ ᴜꜱᴇʀ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_17 = """<blockquote>💫 **🎧 ᴀᴜᴛᴏᴘʟᴀʏ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /autoplay » ᴛᴏɢɢʟᴇꜱ 🔁 ᴀᴜᴛᴏ ᴘʟᴀʏ  
+🔻 /autonext » ꜱᴇᴛꜱ ⏭️ ɴᴇxᴛ ꜱᴏɴɢ ᴍᴏᴅᴇ  
+🔻 /autoclear » ᴄʟᴇᴀʀꜱ 🧹 ᴀᴜᴛᴏ ʟɪꜱᴛ  
+🔻 /autoinfo » ꜱʜᴏᴡꜱ 📊 ᴀᴜᴛᴏᴘʟᴀʏ ꜱᴛᴀᴛᴜꜱ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_18 = """<blockquote>💫 **⚙️ ᴜᴘᴅᴀᴛᴇ ꜱʏꜱᴛᴇᴍ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /update » ᴜᴘᴅᴀᴛᴇꜱ 🔄 ʙᴏᴛ ᴛᴏ ʟᴀᴛᴇꜱᴛ  
+🔻 /restart » ʀᴇꜱᴛᴀʀᴛꜱ ♻️ ᴘʀᴏᴄᴇꜱꜱ  
+🔻 /version » ᴄʜᴇᴄᴋꜱ 🧾 ᴄᴜʀʀᴇɴᴛ ᴠᴇʀꜱɪᴏɴ  
+🔻 /changelog » ᴠɪᴇᴡꜱ 🪶 ʀᴇᴄᴇɴᴛ ᴜᴘᴅᴀᴛᴇꜱ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_19 = """<blockquote>💫 **🧠 ʟᴏɢɢᴇʀ / ᴅᴇʙᴜɢ ᴄᴏᴍᴍᴀɴᴅꜱ:**</blockquote>
+<blockquote>🔻 /logger on|off » ᴛᴜʀɴꜱ 📝 ʟᴏɢꜱ ᴍᴏᴅᴇ  
+🔻 /showlog » ꜱʜᴏᴡꜱ 📁 ʟᴀꜱᴛ ᴇʀʀᴏʀꜱ  
+🔻 /debug » ʀᴜɴꜱ 🔍 ᴅᴇʙᴜɢ ᴄʜᴇᴄᴋ  
+🔻 /reportbug » ᴇᴍᴀɪʟꜱ 🐞 ʙᴜɢ ᴛᴏ ᴅᴇᴠꜱ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_20 = """<blockquote>💫 **🤖 ᴜꜱᴇʀʙᴏᴛ ᴄᴏɴᴛʀᴏʟꜱ:**</blockquote>
+<blockquote>🔻 /userbot join » ᴜꜱᴇʀʙᴏᴛ ᴊᴏɪɴꜱ 🔊 ᴠᴄ  
+🔻 /userbot leave » ʟᴇᴀᴠᴇꜱ 👋 ᴠᴄ  
+🔻 /userbot ping » ᴄʜᴇᴄᴋꜱ ⚡ ᴜꜱᴇʀʙᴏᴛ ꜱᴘᴇᴇᴅ  
+🔻 /userbot stats » ꜱʜᴏᴡꜱ 📊 ᴜꜱᴇʀʙᴏᴛ ᴜꜱᴀɢᴇ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_21 = """<blockquote>💫 **🔗 ᴄᴏɴɴᴇᴄᴛɪᴏɴ ꜱʏꜱᴛᴇᴍ:**</blockquote>
+<blockquote>🔻 /connect [ᴄʜᴀᴛ_ɪᴅ] » ᴄᴏɴɴᴇᴄᴛꜱ 🔌 ᴛᴏ ᴄʜᴀᴛ  
+🔻 /disconnect » ᴅɪꜱᴄᴏɴɴᴇᴄᴛꜱ ❎ ꜰʀᴏᴍ ᴄʜᴀᴛ  
+🔻 /connections » ꜱʜᴏᴡꜱ 🧾 ʟɪꜱᴛ ᴏꜰ ᴀᴄᴛɪᴠᴇ ᴄᴏɴɴᴇᴄᴛꜱ  
+🔻 /reconnect » ʀᴇꜱᴛᴀʀᴛꜱ 🔁 ʟɪɴᴋ ᴄᴏɴɴᴇᴄᴛɪᴏɴ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
+
+HELP_22 = """<blockquote>💫 **🌈 ᴍɪꜱᴄ / ᴇxᴛʀᴀ ʜᴇʟᴘ:**</blockquote>
+<blockquote>🔻 /help » ꜱʜᴏᴡꜱ 💡 ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅꜱ  
+🔻 /info [ᴜꜱᴇʀ] » ɢᴇᴛꜱ 🪪 ᴜꜱᴇʀ ᴅᴇᴛᴀɪʟꜱ  
+🔻 /id » ꜱʜᴏᴡꜱ 🆔 ᴄʜᴀᴛ / ᴜꜱᴇʀ  
+🔻 /stats » ᴠɪᴇᴡꜱ 📈 ʙᴏᴛ ꜱᴛᴀᴛᴜꜱ  
+🔻 /donate » ꜱᴜᴘᴘᴏʀᴛ 💖 ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ</blockquote>
+<blockquote>⋆｡°✩ **𝐇ʙ-𝐅ᴀᴍ** ✩°｡⋆  
+[ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴏғғɪ](https://t.me/HeartBeat_Offi) | [ʜᴇᴧꝛᴛʙᴇᴧᴛ ᴄʜᴧᴛ](https://t.me/HeartBeat_Fam)</blockquote>"""
