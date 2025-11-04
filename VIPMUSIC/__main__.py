@@ -1,6 +1,8 @@
 import asyncio
 import importlib
-from sys import argv
+import os
+import signal
+import sys
 from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
@@ -13,7 +15,13 @@ from VIPMUSIC.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 from VIPMUSIC import telethn
 
+
+# Auto shutdown timer (in seconds)
+AUTO_SHUTDOWN_TIMEOUT = 600  # 10 minutes
+
+
 async def init():
+    """Initialize all components."""
     if (
         not config.STRING1
         and not config.STRING2
@@ -21,39 +29,84 @@ async def init():
         and not config.STRING4
         and not config.STRING5
     ):
-        LOGGER(__name__).error("𝐒𝐭𝐫𝐢𝐧𝐠 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 𝐍𝐨𝐭 𝐅𝐢𝐥𝐥𝐞𝐝, 𝐏𝐥𝐞𝐚𝐬𝐞 𝐅𝐢𝐥𝐥 𝐀 𝐏𝐲𝐫𝐨𝐠𝐫𝐚𝐦 V2 𝐒𝐞𝐬𝐬𝐢𝐨𝐧🤬")
-        
+        LOGGER(__name__).error(
+            "❌ Pyrogram string session not filled. Please set STRING1–STRING5!"
+        )
+
     await sudo()
+
     try:
-        users = await get_gbanned()
-        for user_id in users:
+        gbanned_users = await get_gbanned()
+        for user_id in gbanned_users:
             BANNED_USERS.add(user_id)
-        users = await get_banned_users()
-        for user_id in users:
-            if user_id not in BANNED_USERS:
-                BANNED_USERS.add(user_id)
-    except:
-        pass
+
+        banned_users = await get_banned_users()
+        for user_id in banned_users:
+            BANNED_USERS.add(user_id)
+    except Exception as e:
+        LOGGER(__name__).warning(f"Failed to load banned users: {e}")
+
+    # Start clients
     await app.start()
-    for all_module in ALL_MODULES:
-        importlib.import_module("VIPMUSIC.plugins" + all_module)
-    LOGGER("VIPMUSIC.plugins").info("𝐀𝐥𝐥 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐋𝐨𝐚𝐝𝐞𝐝 𝐁𝐚𝐛𝐲🥳...")
+    for module in ALL_MODULES:
+        importlib.import_module("VIPMUSIC.plugins" + module)
+    LOGGER("VIPMUSIC.plugins").info("✅ All features loaded successfully!")
+
     await userbot.start()
     await VIP.start()
     await VIP.decorators()
-    LOGGER("VIPMUSIC").info("╔═════ஜ۩۞۩ஜ════╗\n  ♨️𝗠𝗔𝗗𝗘 𝗕𝗬 𝗩𝗜𝗣 𝗕𝗢𝗬♨️\n╚═════ஜ۩۞۩ஜ════╝"
+
+    LOGGER("VIPMUSIC").info(
+        "╔═════ஜ۩۞۩ஜ════╗\n  ♨️ 𝗠𝗔𝗗𝗘 𝗕𝗬 𝗩𝗜𝗣 𝗕𝗢𝗬 ♨️\n╚═════ஜ۩۞۩ஜ════╝"
     )
-    await idle()
-    if len(argv) not in (1, 3, 4):
+
+    # Run idle and auto-shutdown together
+    await asyncio.gather(idle(), auto_shutdown())
+
+
+async def auto_shutdown():
+    """Automatically stop and restart the bot after timeout."""
+    LOGGER("VIPMUSIC").info(
+        f"🕒 Auto-shutdown timer started ({AUTO_SHUTDOWN_TIMEOUT // 60} minutes)..."
+    )
+    await asyncio.sleep(AUTO_SHUTDOWN_TIMEOUT)
+    LOGGER("VIPMUSIC").warning(
+        f"⏳ Timeout reached ({AUTO_SHUTDOWN_TIMEOUT // 60} min). Stopping and restarting..."
+    )
+    await restart_bot()
+
+
+async def shutdown():
+    """Gracefully stop all services."""
+    LOGGER("VIPMUSIC").info("🧹 Cleaning up before shutdown...")
+    try:
+        await VIP.stop()
+        await app.stop()
+        await userbot.stop()
         await telethn.disconnect()
-    else:
-        await telethn.run_until_disconnected()
-                
-    await app.stop()
-    await userbot.stop()
-    LOGGER("VIPMUSIC").info("                 ╔═════ஜ۩۞۩ஜ════╗\n  ♨️𝗠𝗔𝗗𝗘 𝗕𝗬 𝗩𝗜𝗣 𝗕𝗢𝗬♨️\n╚═════ஜ۩۞۩ஜ════╝")
-    
+    except Exception as e:
+        LOGGER("VIPMUSIC").error(f"Error during shutdown: {e}")
+
+
+async def restart_bot():
+    """Shutdown everything and restart the bot process."""
+    await shutdown()
+    LOGGER("VIPMUSIC").info("🔁 Restarting bot...")
+    python = sys.executable
+    os.execv(python, [python] + sys.argv)  # restarts the same script
+
 
 if __name__ == "__main__":
     telethn.start(bot_token=config.BOT_TOKEN)
-    asyncio.get_event_loop().run_until_complete(init())
+    loop = asyncio.get_event_loop()
+
+    # Graceful signal handlers (Ctrl+C etc.)
+    for sig in (signal.SIGINT, signal.SIGTERM):
+        loop.add_signal_handler(sig, lambda: asyncio.ensure_future(shutdown()))
+
+    try:
+        loop.run_until_complete(init())
+    except KeyboardInterrupt:
+        loop.run_until_complete(shutdown())
+    finally:
+        loop.close()
