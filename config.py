@@ -9,7 +9,7 @@ load_dotenv()
 # Get this value from my.telegram.org/apps
 API_ID = int(getenv("API_ID","8045459"))
 API_HASH = getenv("API_HASH", "e6d1f09120e17a4372fe022dde88511b")
-BOT_TOKEN = getenv("BOT_TOKEN", "8244250546:AAGv_n9GxRhZuGvzgVhEr7G_XfL7tqL8IIE")
+BOT_TOKEN = getenv("BOT_TOKEN", "8204653134:AAFLhxAIWEV937aucjUQP2T32W6DZsy8-QE")
 
 # Get your mongo url from cloud.mongodb.com
 OWNER_USERNAME = getenv("OWNER_USERNAME","rajeshrakis")
@@ -88,7 +88,7 @@ CLEANMODE_DELETE_MINS = int(
 )  # Remember to give value in Seconds
 
 # Get your pyrogram v2 session from @VIP_STRING_ROBOT on Telegram
-STRING1 = getenv("STRING_SESSION2", "BQGhmW8AgmxBAF7Tm87lK9crvVAQg_BT8u_IxCy_VII41tb4FTZPDVWmHAvADe4qb5UuJJoF5uezbXjjFi6EkuUd8fzYaq6D4n_Vn-DB-2OjxnE-R0ObpdRA8HTwtJwsox1GndVaKvj-UG6FV9nsRFjkJl98J59kEkV2Q1Lmfnpys9498Gf4Ft0ojRlk17Jzd1s87MZ6UOUZQ6AUoZm22PigpEUw1nNwJuk-zaMjxjwQDwbcCjpl8gZWXiF2XwE_fudil28Nze431yFc91r-0d-lAVr3wGFzLFHgk_MYyWyiv-wSrbJgtEpIdSOJ6cYRxqDLqBeqk469ivKFlDllOSBdy2M7BQAAAAGTum08AA")
+STRING1 = getenv("STRING_SESSION2", "BQDMBnkAgMi6w14gkRC25llhshEwoPl8QxI0qai0b8TT37lIrCpNTcxDwmtAseNHna0V7pK_LlugA5KS674y1YOTDzWg5C_QBlx-prHHn6Zcmi3xnt2eQyuDXQCAmY7Gc-4W7JE6Yvb5V03tF90wWkkvNfsELnotJ8UGXh_FBNuTIT_TjmT0igBz54TZH6aWU0KPw1a2QITznM34RBUxmbPHqjSnSIG65HuwVCio2biwoHQRWSB47SsaeJSL1kPHq8R4XcuDxOOkrBQXG3w3Q0na_kaKQFPYF-msMGZdYWUmITIiByUY1A7Y7iQze9xiCoPHaSqxPWZ__77HtkNvXVx6DAWXEQAAAAHjb-HaAA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -143,7 +143,19 @@ GREET = [
     "💞", "🥂", "🔍", "🧪", "🥂", "⚡️", "🔥", "🦋", "🎩", "🌈", "🍷", "🥂", "🦋", "🥃", "🥤", "🕊️",
     "🦋", "🦋", "🕊️", "⚡️", "🕊️", "⚡️", "⚡️", "🥂", "💌", "🥂", "🥂", "🧨"
 ]
-MENTION_USERNAMES = ["@GhosttBatt", "@rajeshrakis", "@OnixGhost", "@thedakkidaikathaval_bot", "/start", "/help", "Ghost Bat", "Shasha", "bat" ]
+MENTION_USERNAMES = [
+    "@GhosttBatt",
+    "@rajeshrakis",
+    "@OnixGhost",
+    "@thedakkidaikathaval_bot",
+    "/start",
+    "/help",
+    "/play",
+    "/vplay",
+    "Ghost Bat",
+    "Shasha",
+    "bat",
+                    ]
 START_REACTIONS = ["❤️", "🎧", "✨", "🔥", "💫", "💥", "🎶", "🌸", "⚡"]
 
 def time_to_seconds(time):
