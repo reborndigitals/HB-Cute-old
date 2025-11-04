@@ -151,8 +151,6 @@ MENTION_USERNAMES = [
     "@thedakkidaikathaval_bot",
     "/start",
     "/help",
-    "/play",
-    "/vplay",
     "Ghost Bat",
     "Shasha",
     "bat",
