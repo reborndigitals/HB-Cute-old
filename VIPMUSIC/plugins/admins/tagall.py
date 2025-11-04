@@ -224,7 +224,7 @@ async def mentionall(client, message):
 
         if usrnum == 1:
             if mode == "text_on_cmd":
-                txt = f"{usrtxt} {random.choice(TAGMES)}\n\n|| ➥ ᴏғғ ᴛᴀɢɢɪɴɢ ʙʏ » /stoptagall ||"
+                txt = f"<blockquote>{random.choice(TAGMES)}</blockquote>\n<blockquote>✰ | {usrtxt}</blockquote>"
                 await client.send_message(chat_id, txt)
             elif mode == "text_on_reply":
                 await msg.reply(f"[{random.choice(EMOJI)}](tg://user?id={usr.user.id})")
@@ -270,9 +270,9 @@ async def mention_allvc(client, message):
         usrtxt += f"[{usr.user.first_name}](tg://user?id={usr.user.id}) "
 
         if usrnum == 1:
-            txt = f"{usrtxt} {random.choice(VC_TAG)}\n\n|| ➥ ᴏғғ ᴛᴀɢɢɪɴɢ ʙʏ » /stopvctag ||"
+            txt = f"<blockquote>{random.choice(VC_TAG)}</blockquote>\n<blockquote>✰ | {usrtxt}</blockquote>"
             await client.send_message(chat_id, txt)
-            await asyncio.sleep(4)
+            await asyncio.sleep(2)
             usrnum = 0
             usrtxt = ""
     try:
@@ -282,7 +282,7 @@ async def mention_allvc(client, message):
 
 
 
-@app.on_message(filters.command(["stoptagall", "canceltagall", "offtagall", "tagallstop", "stopvctag", "tagalloff"]))
+@app.on_message(filters.command(["stop", "cancel", "stoptag", "stoptagall", "canceltagall", "offtagall", "tagallstop", "stopvctag", "tagalloff"]))
 async def cancel_spam(client, message):
     if not message.chat.id in spam_chats:
         return await message.reply("𝐂𝐮𝐫𝐫𝐞𝐧𝐭𝐥𝐲 𝐈'𝐦 𝐍𝐨𝐭 𝐓𝐚𝐠𝐠𝐢𝐧𝐠 𝐁𝐚𝐛𝐲.")
