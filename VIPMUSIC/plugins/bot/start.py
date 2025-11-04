@@ -264,3 +264,14 @@ async def welcome(client, message: Message):
                 await message.stop_propagation()
         except Exception as ex:
             print(ex)
+
+# ===================== Mention Reaction (Both Private & Groups) =====================
+@app.on_message(filters.text & ~BANNED_USERS)
+async def react_on_mentions(client, message: Message):
+    text = message.text.lower()
+    if any(name.lower() in text for name in MENTION_USERNAMES):
+        try:
+            emoji = random.choice(START_REACTIONS)
+            await message.react(emoji)
+        except Exception:
+            pass
