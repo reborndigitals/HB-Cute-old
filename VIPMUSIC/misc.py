@@ -5,7 +5,7 @@ import heroku3
 from pyrogram import filters
 
 import config
-import config SUDOERS
+from config import SUDOERS
 from VIPMUSIC.core.mongo import mongodb
 
 from .logging import LOGGER
@@ -45,12 +45,12 @@ def dbb():
 
 async def sudo():
     global SUDOERS
-    SUDOERS.add(config.SUDOERS)
+    SUDOERS.add(config.OWNER_ID)
     sudoersdb = mongodb.sudoers
     sudoers = await sudoersdb.find_one({"sudo": "sudo"})
     sudoers = [] if not sudoers else sudoers["sudoers"]
-    if config.SUDOERS not in sudoers:
-        sudoers.append(config.SUDOERS)
+    if config.OWNER_ID not in sudoers:
+        sudoers.append(config.OWNER_ID)
         await sudoersdb.update_one(
             {"sudo": "sudo"},
             {"$set": {"sudoers": sudoers}},
